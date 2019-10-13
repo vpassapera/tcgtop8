@@ -1,0 +1,47 @@
+.vertical-center {
+  min-height: 90%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 90vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.login-image {
+  width: 50%;
+}
+
+.login-title {
+  font-size: 2rem;
+}
+
+.form-control-feedback {
+  color: #721415;
+  font-size: 0.5rem;
+}
+
+.login-form > .form-group > .form-control-feedback {
+  height: 1.5rem;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.login-form > .form-group > .form-control-feedback {
+  margin-bottom: 0;
+}
+
+.mt-05 {
+  margin-top: 0.20rem !important;
+}
+
+input[type="text"], input[type="password"] {
+  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+  -webkit-transition: box-shadow .5s ease;
+  -moz-transition: box-shadow .5s ease;
+  -o-transition: box-shadow .5s ease;
+  -ms-transition: box-shadow .5s ease;
+  transition: box-shadow .5s ease;
+
+  :focus {
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2);
+  }
+}
