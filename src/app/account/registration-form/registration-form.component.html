@@ -1,0 +1,108 @@
+<toaster-container [toasterconfig]="toasterConfig"></toaster-container>
+<div class="container-fluid mt-3">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>SignUp</h1>
+          <form novalidate [formGroup]="registrationForm" name="register" (ngSubmit)="submit()" class="registration-form">
+            <fieldset>
+              <legend>Enter your details</legend>
+              <div class="form-group" [ngClass]="{'has-danger': username.invalid && (username.dirty || username.touched), 'has-success': username.valid && (username.dirty || username.touched)}">
+                <label for="username">Username</label>
+                <input id="username" type="text" class="form-control" formControlName="username" placeholder="Username" aria-describedby="usernameHelp" [ngClass]="{'is-valid': username.valid && (username.dirty || username.touched)}" required>
+                <small id="usernameHelp" class="form-text text-muted">This is what is publicly displayed on the site.</small>
+                <div class="valid-feedback"  *ngIf="username.valid && (username.dirty || username.touched)">Username is available</div>
+                <div class="form-control-feedback pull-left" *ngIf="username.errors && (username.dirty || username.touched)">
+                  <p *ngIf="username.errors.required">Username is required</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input id="email" type="email" class="form-control" formControlName="email" placeholder="Email address" aria-describedby="emailHelp" [ngClass]="{'is-valid': email.valid && (email.dirty || email.touched)}" required>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <div class="valid-feedback"  *ngIf="email.valid && (email.dirty || email.touched)">Email is valid</div>
+                <div class="form-control-feedback pull-left" *ngIf="email.errors && (email.dirty || email.touched)">
+                  <p *ngIf="email.errors.required">Email is required</p>
+                  <p *ngIf="email.errors.email">Invalid Email</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" class="form-control" formControlName="password" placeholder="Password" [ngClass]="{'is-valid': password.valid && (password.dirty || password.touched)}" required>
+                <div class="valid-feedback"  *ngIf="password.valid && (password.dirty || password.touched)">Password is valid</div>
+                <div class="form-control-feedback pull-left" style="display: block;" *ngIf="password.errors && (password.dirty || password.touched)">
+                  <p *ngIf="password.errors.required">Password is required</p>
+                  <p *ngIf="password.errors.minlength">Password should be minimum 8 Characters</p>
+                  <p *ngIf="password.errors.hasCapitalCase">Password should include an upper case letter</p>
+                  <p *ngIf="password.errors.hasLowerCase">Password should include a lower case letter</p>
+                  <p *ngIf="password.errors.hasNumber">Password should include a number</p>
+                  <p *ngIf="password.errors.hasSpecialCharacter">Password should include one of the following: !@#$%^&*(),.?":{{"{}"}}|<></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="passwordConfirm">Password Confirmation</label>
+                <input id="passwordConfirm" type="password" class="form-control" formControlName="passwordConfirmation" placeholder="Repeat password"  [ngClass]="{'is-valid': passwordConfirmation.valid && !registrationForm.errors && (passwordConfirmation.dirty || passwordConfirmation.touched)}" required>
+                <div class="valid-feedback" *ngIf="passwordConfirmation.valid && !registrationForm.errors">Passwords match</div>
+                <div class="form-control-feedback pull-left" style="display: block;" *ngIf="(passwordConfirmation.errors && (passwordConfirmation.dirty || passwordConfirmation.touched)) || registrationForm.errors">
+                  <p *ngIf="passwordConfirmation.errors?.required">Password confirmation is required</p>
+                  <p *ngIf="registrationForm.errors?.mismatchedPasswords">Password does not match</p>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-ladda px-4 mb-2" [disabled]="!registrationForm.valid || isRegistering()" [ladda]="isRegistering()" data-style="zoom-out">
+                <span class="ladda-label">Submit</span>
+                <span class="ladda-spinner"></span>
+              </button>
+            </fieldset>
+          </form>
+        </div>
+        <div class="col-md-4 h-100">
+          <div class="bg-information">
+            <div class="row h-50">
+              <div class="col-md-12 oauth-services">
+                <h2>Or use one of these services...</h2>
+                <button type="button" class="btn btn-primary btn-facebook">
+                  <i class="fab fa-facebook-square"></i>
+                  Signup with Facebook
+                </button>
+                <button type="button" class="btn btn-primary btn-google">
+                  <i class="fab fa-google"></i>
+                  Signup with Google
+                </button>
+                <button type="button" class="btn btn-primary btn-github">
+                  <i class="fab fa-github-square"></i>
+                  Signup with GitHub
+                </button>
+                <button type="button" class="btn btn-primary btn-linkedin">
+                  <i class="fab fa-linkedin"></i>
+                  Signup with LinkedIn
+                </button>
+                <button type="button" class="btn btn-primary btn-twitter">
+                  <i class="fab fa-twitter-square"></i>
+                  Signup with Twitter
+                </button>
+                <button type="button" class="btn btn-primary btn-amazon">
+                  <i class="fab fa-amazon"></i>
+                  Signup with Amazon
+                </button>
+              </div>
+            </div>
+            <div class="row h-50">
+              <div class="col-md-12 registration-information">
+                <h3>Why should you register?</h3>
+                <p>You'll get to use the website to it's full extent!</p>
+                <ul>
+                  <li>Create a league</li>
+                  <li>Create an event (Tournament, draft, kitchen, just friends getting together)</li>
+                  <li>Track your collection</li>
+                  <li>Add your decks and get statistics</li>
+                  <li>Many more features!</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

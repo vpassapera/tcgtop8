@@ -1,0 +1,55 @@
+.bg-information {
+  background-color: #252525
+}
+
+.registration-information, .oauth-services {
+  padding: 2rem;
+  h2, h3 {
+    color: #a3a2a4;
+  }
+}
+
+.registration-information {
+  background-color: #161515;
+  color: #bcbcbc;
+}
+
+.oauth-services {
+  text-align: center;
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-github {
+    background-color: #1f1f1f;
+  }
+
+  .btn-facebook {
+    background-color: #4267B2;
+  }
+
+  .btn-google {
+    background-color: #830f07;
+  }
+
+  .btn-twitter {
+    background-color: #0e90d2;
+  }
+
+  .btn-amazon {
+    background-color: #bd821d;
+  }
+
+  .btn-linkedin {
+    background-color: #2867B2;
+  }
+
+  button {
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+
+  button:hover {
+    filter: brightness(65%);
+  }
+}

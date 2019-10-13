@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootswatch_variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "bootswatch";
+@import 'node_modules/angular2-toaster/src/toaster';
+@import "variables";
+@import "badges";
+@import "toaster";
+@import "application";

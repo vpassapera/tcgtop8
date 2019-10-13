@@ -1,0 +1,38 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 2px;
+}
+
+.h-60 {
+  height: 60% !important;
+}
+
+.h-65 {
+  height: 65% !important;
+}
+
+.form-control-feedback {
+  color: #b61d1f;
+  font-size: 0.8rem;
+}
+
+.form-group > .form-control-feedback {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.form-group > .form-control-feedback {
+  margin-bottom: 0;
+}
+
+.mt-05 {
+  margin-top: 0.20rem !important;
+}
