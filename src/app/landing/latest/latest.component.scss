@@ -1,0 +1,21 @@
+@import "../../../scss/variables.scss";
+
+.latest-winners-list {
+  color: #0c0c0c;
+}
+
+.featured-card {
+  text-align: center;
+  border-bottom: $common-border;
+  img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+  }
+}
+
+.top-winner {
+  background: #c8f0ff;
+}
+
+//#9dd5ff
