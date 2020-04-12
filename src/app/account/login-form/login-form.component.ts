@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
-import {ToasterConfig, ToasterService} from 'angular2-toaster';
-import {Constants} from "../../constants";
+import {ToasterService} from 'angular2-toaster';
 import {faLock, faUser} from "@fortawesome/free-solid-svg-icons";
 import {sprintf} from 'sprintf-js';
 import {IconDefinition} from "@fortawesome/fontawesome-common-types";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-form',
@@ -18,7 +18,6 @@ export class LoginFormComponent implements OnInit {
   public username: FormControl;
   public password: FormControl;
   public rememberMe: FormControl;
-  public toasterConfig: ToasterConfig;
   public faLock: IconDefinition = faLock;
   public faUser: IconDefinition = faUser;
   private authenticating: boolean = false;
@@ -26,12 +25,10 @@ export class LoginFormComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private toasterService: ToasterService
+    private toasterService: ToasterService,
+    private titleService: Title
   ) {
-    this.toasterConfig = new ToasterConfig({
-      tapToDismiss: true,
-      timeout: Constants.TOASTER_TIMEOUT
-    });
+    this.titleService.setTitle('FreeTop8::Login')
   }
 
   isAuthenticating(): boolean {

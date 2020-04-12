@@ -4,7 +4,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {AccountModule} from './account/account.module';
-import {LandingModule} from "./landing/landing.module";
+import {HomeModule} from "./home/home.module";
 import {ToasterService} from "angular2-toaster";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
@@ -21,7 +21,7 @@ import {FormatModule} from "./format/format.module";
     BrowserAnimationsModule,
     FontAwesomeModule,
     AccountModule,
-    LandingModule,
+    HomeModule,
     LeaguesModule,
     FormatModule,
     AppRoutingModule,

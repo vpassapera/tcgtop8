@@ -18,7 +18,7 @@ export class NewTournamentButtonComponent implements OnInit, OnChanges {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.label = this.getLabel(this.format);
+    this.ngOnChanges();
   }
 
   ngOnChanges() {

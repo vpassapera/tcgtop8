@@ -7,4 +7,9 @@ export class Constants {
     'standard',
     'commander'
   ];
+  static readonly REL_LEVELS: string[] = [
+    'regular',
+    'competitive',
+    'professional',
+  ]
 }

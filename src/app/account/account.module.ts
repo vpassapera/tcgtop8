@@ -9,17 +9,19 @@ import {RegistrationFormComponent} from './registration-form/registration-form.c
 import {SettingsComponent} from './settings/settings.component';
 import {ToasterModule} from "angular2-toaster";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import { ViewComponent } from './view/view.component';
+import { SelfComponent } from './self/self.component';
 
 @NgModule({
-  declarations: [LoginFormComponent, RegistrationFormComponent, SettingsComponent],
+  declarations: [LoginFormComponent, RegistrationFormComponent, SettingsComponent, ViewComponent, SelfComponent],
   imports: [
     CommonModule,
     AccountRoutingModule,
     LayoutModule,
+    ToasterModule,
     FormsModule,
     ReactiveFormsModule,
     LaddaModule,
-    ToasterModule,
     FontAwesomeModule,
   ]
 })

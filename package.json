@@ -33,6 +33,8 @@
     "kind-of": "^6.0.3",
     "ladda": "^2.0.1",
     "minimist": "^1.2",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.28",
     "popper.js": "^1.16.1",
     "pretty-checkbox": "^3.0.3",
     "rxjs": "~6.4.0",

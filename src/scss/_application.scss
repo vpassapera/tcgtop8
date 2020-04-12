@@ -11,6 +11,10 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 2px;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .h-60 {
   height: 60% !important;
 }
@@ -35,4 +39,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .mt-05 {
   margin-top: 0.20rem !important;
+}
+
+.max-width-2 {
+  width: 2rem;
+  max-width: 2rem;
+}
+
+.max-width-4 {
+  width: 4rem;
+  max-width: 4rem;
 }

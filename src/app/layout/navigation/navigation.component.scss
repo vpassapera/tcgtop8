@@ -1,7 +1,19 @@
+
 .navbar-brand {
   .text {
     display: inline-block;
     vertical-align: middle;
     line-height: 3rem;
+  }
+}
+
+$mellow-grey: #565656;
+
+.dropdown-menu {
+  a:focus {
+    background-color: $mellow-grey;
+  }
+  .active {
+    background-color: $mellow-grey;
   }
 }

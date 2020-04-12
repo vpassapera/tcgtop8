@@ -2,67 +2,58 @@
   <div class="card">
     <div class="card-body">
       <div class="row">
-        <div class="col-sm-12">
-          <h3 class="float-left">{{format}}</h3>
+        <div class="col-lg-12">
+          <h2 class="float-left">{{format}}</h2>
           <app-new-tournament-button [format]=format></app-new-tournament-button>
           <div class="clearfix"></div>
           <hr/>
           <div class="row">
-            <div class="col-sm-3 mb-3">
-              <div class="card border-secondary">
-                <div class="card-header">Meta Game</div>
-                <div class="card-body">
-                  <h4 class="card-title">Primary card title</h4>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
+            <div class="col-lg-3 mb-3">
+              <app-format-meta-list [format]=format></app-format-meta-list>
             </div>
-            <div class="col-sm-6">
+            <div class="col-lg-6">
               <div class="row">
-                <div class="col-sm-12 mb-3">
-                  <div class="card text-white bg-dark">
-                    <div class="card-header">Currently active events</div>
-                    <div class="card-body">
-                      <h4 class="card-title">Info card title</h4>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                  </div>
+                <div class="col-lg-12 mb-3">
+                  <app-active-tournaments-list [format]=format></app-active-tournaments-list>
                 </div>
               </div>
               <div class="row">
-                <div class="col-sm-12 mb-3">
+                <div class="col-lg-12 mb-3">
                   <div class="card border-primary">
-                    <div class="card-header">Past and future events</div>
-                    <div class="card-body">
-                      <h4 class="card-title">Secondary card title</h4>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="card-header bg-light">
+                      <ul class="nav nav-pills">
+                        <li class="nav-item">
+                          <a class="nav-link pointer" (click)="setMode('feed')" [ngClass]="{'active': getMode() == 'feed'}">Feed</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link pointer" (click)="setMode('upcoming')" [ngClass]="{'active': getMode() == 'upcoming'}">Upcoming Tournaments</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link pointer" (click)="setMode('past')" [ngClass]="{'active': getMode() == 'past'}">Past Tournaments</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link pointer" (click)="setMode('own')" [ngClass]="{'active': getMode() == 'own'}">My Tournaments</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="card-body" *ngIf="getMode() === 'feed'">
+                      <app-format-feed-list></app-format-feed-list>
+                    </div>
+                    <div class="card-body" *ngIf="getMode() === 'upcoming'">
+                      <app-upcoming-tournaments-list [format]="format"></app-upcoming-tournaments-list>
+                    </div>
+                    <div class="card-body" *ngIf="getMode() === 'past'">
+                      <app-past-tournaments-list [format]="format"></app-past-tournaments-list>
+                    </div>
+                    <div class="card-body" *ngIf="getMode() === 'own'">
+                      <app-my-tournaments-list [format]=format></app-my-tournaments-list>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-sm-3">
-              <div class="card border-primary">
-                <div class="card-header">Most played cards</div>
-                <div class="featured-card">
-                  <img src="https://www.mtgpics.com/pics/big/ktk/249.jpg">
-                  <div class="card-body">
-                    <h6>Weekly Winner: [[Card Title]]</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">[Card 2]...</li>
-                  <li class="list-group-item">[Card 3]...</li>
-                  <li class="list-group-item">[Card 4]...</li>
-                  <li class="list-group-item">[Card 5]...</li>
-                  <li class="list-group-item">[Card 6]...</li>
-                  <li class="list-group-item">[Card 7]...</li>
-                  <li class="list-group-item">[Card 8]...</li>
-                  <li class="list-group-item">[Card 9]...</li>
-                  <li class="list-group-item">[Card 10]...</li>
-                </ul>
-              </div>
+            <div class="col-lg-3">
+              <app-format-most-played-cards [format]=format></app-format-most-played-cards>
             </div>
           </div>
         </div>

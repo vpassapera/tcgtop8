@@ -5,6 +5,8 @@ import {FooterOnlyLayoutComponent} from "../layout/footer-only-layout/footer-onl
 import {MainLayoutComponent} from "../layout/main-layout/main-layout.component"
 import {RegistrationFormComponent} from "./registration-form/registration-form.component";
 import {SettingsComponent} from "./settings/settings.component";
+import {ViewComponent} from "./view/view.component";
+import {SelfComponent} from "./self/self.component";
 
 const routes: Routes = [
   {
@@ -39,7 +41,26 @@ const routes: Routes = [
             component: SettingsComponent
           }
         ]
-      }
+      },
+      {
+        path: 'view',
+        component: MainLayoutComponent,
+        children: [
+          {
+            path: 'self',
+            component: SelfComponent
+          },
+          {
+            path: ':user',
+            component: ViewComponent
+          },
+          {
+            path: '',
+            redirectTo: 'self',
+            pathMatch: 'full',
+          },
+        ]
+      },
     ],
   }
 ];

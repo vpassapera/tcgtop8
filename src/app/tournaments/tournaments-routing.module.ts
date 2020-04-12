@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {MainLayoutComponent} from "../layout/main-layout/main-layout.component";
-import {TournamentFormComponent} from "./new-tournament-form/tournament-form.component";
+import {NewComponent} from "./new/new.component";
+import {EditComponent} from "./edit/edit.component";
 
 
 const routes: Routes = [
@@ -11,11 +12,11 @@ const routes: Routes = [
     children: [
       {
         path: 'new/:format',
-        component: TournamentFormComponent
+        component: NewComponent
       },
       {
         path: 'edit/:slug',
-        component: TournamentFormComponent
+        component: EditComponent
       }
     ]
   }
