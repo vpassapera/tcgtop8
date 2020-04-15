@@ -12,6 +12,7 @@ import {NewComponent} from './new/new.component';
 import {EditComponent} from './edit/edit.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {LaddaModule} from "angular2-ladda";
+import {BracketPipe} from './pipes/bracket.pipe';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {LaddaModule} from "angular2-ladda";
     ActiveTournamentsListComponent,
     MyTournamentsListComponent,
     NewComponent,
-    EditComponent
+    EditComponent,
+    BracketPipe
   ],
   exports: [
     NewTournamentButtonComponent,

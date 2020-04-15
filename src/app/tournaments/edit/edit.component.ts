@@ -34,8 +34,9 @@ export class EditComponent implements OnInit {
       'Foo Bar',
       'modern',
       'regular',
+    'swiss',
       moment().toDate(),
-    'A quick test tournament',
+      'A quick test tournament',
       false,
       true,
       'cockatrice'

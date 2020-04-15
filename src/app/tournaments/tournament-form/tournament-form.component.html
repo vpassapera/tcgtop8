@@ -23,7 +23,7 @@
       <label for="format">Format</label>
       <select class="form-control" id="format" formControlName="format" aria-describedby="formatHelp" [ngClass]="{'is-valid': format.valid}">
         <option value="" disabled>Select a format</option>
-        <option *ngFor="let formatOption of validFormats;" [value]="formatOption">{{formatOption | titlecase}}</option>
+        <option *ngFor="let formatOption of validFormats;" [value]="formatOption" [selected]="formatInput.toLowerCase() == formatOption">{{formatOption | titlecase}}</option>
       </select>
       <small id="formatHelp" class="form-text text-muted">The format for the tournament.</small>
       <div class="valid-feedback" *ngIf="format.valid">
@@ -37,6 +37,31 @@
         <p *ngIf="format.errors.badFormat">Format is invalid.</p>
       </div>
     </div>
+    <div class="form-group" [ngClass]="{'has-danger': maxPlayerCount.invalid && (maxPlayerCount.dirty || maxPlayerCount.touched), 'has-success': maxPlayerCount.valid && (maxPlayerCount.dirty || maxPlayerCount.touched)}">
+      <label for="maxPlayerCount">Max Players</label>
+      <input id="maxPlayerCount" type="number" class="form-control" formControlName="maxPlayerCount" placeholder="6" aria-describedby="maxPlayerCountHelp" [ngClass]="{'is-valid': maxPlayerCount.valid && (maxPlayerCount.dirty || maxPlayerCount.touched)}" required>
+      <small id="maxPlayerCountHelp" class="form-text text-muted">The maximum number of players allowed to join.</small>
+      <div class="valid-feedback" *ngIf="maxPlayerCount.valid && (maxPlayerCount.dirty || maxPlayerCount.touched)">Max Number of players is OK!</div>
+      <div class="form-control-feedback pull-left" *ngIf="maxPlayerCount.errors && (maxPlayerCount.dirty || maxPlayerCount.touched)">
+        <p *ngIf="maxPlayerCount.errors.required">Max Number of players is required</p>
+        <p *ngIf="maxPlayerCount.errors.min">A minimum number entered here should be 6!</p>
+        <p *ngIf="maxPlayerCount.errors.pattern">This doesn't look like a number!</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="bracketType">Bracket Type</label>
+      <select class="form-control" id="bracketType" formControlName="bracketType" aria-describedby="bracketTypeHelp" [ngClass]="{'is-valid': bracketType.valid}">
+        <option value="" disabled>Select Bracket Type</option>
+        <option *ngFor="let bracketOption of validBrackets;" [value]="bracketOption">{{bracketOption | bracket | titlecase}}</option>
+      </select>
+      <small id="bracketTypeHelp" class="form-text text-muted">The type of bracket for the tournament.</small>
+      <div class="valid-feedback" *ngIf="bracketType.valid">
+        Fancy bracket!
+      </div>
+      <div class="form-control-feedback pull-left" *ngIf="bracketType.errors && (bracketType.dirty || bracketType.touched)">
+        <p *ngIf="bracketType.errors.badBracket">Bracket type is invalid.</p>
+      </div>
+    </div>
     <div class="form-group">
       <label for="rel">REL</label>
       <select class="form-control" id="rel" formControlName="rel" aria-describedby="relHelp" [ngClass]="{'is-valid': rel.valid}">
@@ -44,7 +69,7 @@
         <option *ngFor="let relOption of validRELs;" [value]="relOption">{{relOption | titlecase}}</option>
       </select>
       <small id="relHelp" class="form-text text-muted">The tournament Rule Enforcement Level.</small>
-      <div class="valid-feedback" *ngIf="rel.valid">
+      <div class="valid-feedback" *ngIf="rel.valid && (rel.dirty || rel.touched)">
         <span *ngIf="rel.value == 'regular'">Friendly tournament. FNM level. Some players may not know all the rules.</span>
         <span *ngIf="rel.value == 'competitive'">GPT, PTQ, RPTQ, GP day 1 level. Expect players to be experienced.</span>
         <span *ngIf="rel.value == 'professional'">GP day 2, Pro Tour, World Cup. Players should be professionals, make few if any mistakes, and require little to no guidance at all.</span>
@@ -73,13 +98,27 @@
         </div>
       </div>
     </div>
-    <div class="form-group" [ngClass]="{'has-danger': location.invalid && (location.dirty || location.touched), 'has-success': location.valid && (location.dirty || location.touched)}">
-      <label for="apploc">App / Location</label>
-      <input id="apploc" type="text" class="form-control" formControlName="location" placeholder="Application name / Location of event" aria-describedby="applocHelp" [ngClass]="{'is-valid': name.valid && (name.dirty || name.touched)}" required>
-      <small id="applocHelp" class="form-text text-muted">The application name (if online, e.g. Cockatrice, XMage) or address/place for event.</small>
-      <div class="valid-feedback" *ngIf="location.valid && (location.dirty || location.touched)">Location is set!</div>
+    <div class="form-group">
+      <label for="location">Location</label>
+      <select class="form-control" id="location" formControlName="location" aria-describedby="lochelp" (change)="mandatoryLocationDetails(location.value)" [ngClass]="{'is-valid': location.valid}">
+        <option value="" disabled>Select Location/Application</option>
+        <option *ngFor="let locOption of validLocations;" [value]="locOption">{{locOption | titlecase}}</option>
+      </select>
+      <small id="lochelp" class="form-text text-muted">The tournament Rule Enforcement Level.</small>
+      <div class="valid-feedback" *ngIf="location.valid && (location.dirty || location.touched)">
+        Location is set!
+      </div>
       <div class="form-control-feedback pull-left" *ngIf="location.errors && (location.dirty || location.touched)">
-        <p *ngIf="location.errors.required">Location is required</p>
+        <p *ngIf="format.errors.badLocation">Location is invalid.</p>
+      </div>
+    </div>
+    <div class="form-group" [ngClass]="{'has-danger': locationDetails.invalid && (locationDetails.dirty || locationDetails.touched), 'has-success': locationDetails.valid && (locationDetails.dirty || location.touched)}" *ngIf="location.value == 'other'">
+      <label for="applocdet">Location Details</label>
+      <input id="applocdet" type="text" class="form-control" formControlName="locationDetails" placeholder="Details about event location" aria-describedby="applocdetHelp" [ngClass]="{'is-valid': locationDetails.valid && (locationDetails.dirty || locationDetails.touched)}" required>
+      <small id="applocdetHelp" class="form-text text-muted">Possibly, a physical address for the event.</small>
+      <div class="valid-feedback" *ngIf="locationDetails.valid && (locationDetails.dirty || locationDetails.touched)">Location details are set!</div>
+      <div class="form-control-feedback pull-left" *ngIf="locationDetails.errors && (locationDetails.dirty || locationDetails.touched)">
+        <p *ngIf="locationDetails.errors.required">Location details are required!</p>
       </div>
     </div>
     <div class="form-group">
@@ -89,6 +128,20 @@
         <div class="state p-info-o">
           <label for="private" class="form-check-label">Private - Only League members may join, leagues have their own privacy settings.</label>
         </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="rel">Leagues</label>
+      <select class="form-control" id="league" formControlName="league" aria-describedby="leagueHelp" [ngClass]="{'is-valid': league.valid && (league.dirty || league.touched)}">
+        <option value="" disabled>Select League</option>
+        <option *ngFor="let leagueOption of validLeagues;" [value]="leagueOption.name">{{leagueOption.name | titlecase}}</option>
+      </select>
+      <small id="leagueHelp" class="form-text text-muted">Is this a league tournament?</small>
+      <div class="valid-feedback" *ngIf="league.valid && (league.dirty || league.touched)">
+        League is valid!
+      </div>
+      <div class="form-control-feedback pull-left" *ngIf="league.errors && (league.dirty || league.touched)">
+        <p *ngIf="league.errors.badLeague">League is invalid.</p>
       </div>
     </div>
     <button type="submit" class="btn btn-primary btn-ladda px-4 mb-2" [disabled]="!tournamentForm.valid || isSaving()" [ladda]="isSaving()" data-style="zoom-out">

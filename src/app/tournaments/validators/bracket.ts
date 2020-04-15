@@ -1,12 +1,12 @@
 import {AbstractControl, ValidationErrors} from "@angular/forms";
 import {Constants} from "../constants";
 
-export class Rel {
+export class Bracket {
   static isValid(c: AbstractControl): ValidationErrors | null {
-    if (Constants.REL_LEVELS.includes(c.value)) {
+    if (Constants.BRACKET_TYPES.includes(c.value)) {
       return null;
     }
 
-    return { badRel: true }
+    return { badBracket: true }
   }
 }

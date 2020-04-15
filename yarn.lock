@@ -1354,6 +1354,11 @@ angular2-toaster@^8.0.0:
   resolved "https://registry.yarnpkg.com/angular2-toaster/-/angular2-toaster-8.0.0.tgz#9f5df2c9df00b96475cd179c4b4e4fad5a6dc7ac"
   integrity sha512-MRDswCmhqFLBiot7C7SIq96NyU5aT9pwIVdYgmYJtXHp7N6fXk6QzuMSMhVvK12edUJntgmUft+SZfh45Oq0Wg==
 
+animate.css@^3.7.2:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.7.2.tgz#e73e0d50e92cb1cfef1597d9b38a9481020e08ea"
+  integrity sha512-0bE8zYo7C0KvgOYrSVfrzkbYk6IOTVPNqkiHg2cbyF4Pq/PXzilz4BRWA3hwEUBoMp5VBgrC29lQIZyhRWdBTw==
+
 ansi-colors@4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-4.1.1.tgz#cbb9ae256bf750af1eab344f229aa27fe94ba348"
@@ -5133,6 +5138,11 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
+
+ng-spin-kit@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/ng-spin-kit/-/ng-spin-kit-5.1.1.tgz#ecad9709c77ff4dde79eb532ba0db4650a8800a8"
+  integrity sha1-7K2XCcd/9N3nnrUyug20ZQqIAKg=
 
 nice-try@^1.0.4:
   version "1.0.5"

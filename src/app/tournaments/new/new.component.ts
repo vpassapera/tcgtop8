@@ -4,6 +4,7 @@ import {ToasterService} from "angular2-toaster";
 import {Title} from "@angular/platform-browser";
 import {Constants} from "../../constants";
 import {sprintf} from "sprintf-js";
+import {Tournament} from "../model/tournament";
 
 @Component({
   selector: 'app-new',

@@ -28,7 +28,8 @@ export class LoginFormComponent implements OnInit {
     private toasterService: ToasterService,
     private titleService: Title
   ) {
-    this.titleService.setTitle('FreeTop8::Login')
+    this.titleService.setTitle('FreeTop8::Login');
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   isAuthenticating(): boolean {
@@ -36,8 +37,6 @@ export class LoginFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-
     this.username = new FormControl('', [
       Validators.required
     ]);
@@ -47,6 +46,7 @@ export class LoginFormComponent implements OnInit {
     ]);
 
     this.rememberMe = new FormControl('');
+
     this.loginForm = new FormGroup({
       username: this.username,
       password: this.password,

@@ -7,13 +7,16 @@ import { SponsoredLeaguesComponent } from './sponsored-leagues/sponsored-leagues
 import { ViewComponent } from './view/view.component';
 import { LeaguesListComponent } from './leagues-list/leagues-list.component';
 import { TopLeaguesComponent } from './top-leagues/top-leagues.component';
+import { NewLeagueButtonComponent } from './new-league-button/new-league-button.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 
 @NgModule({
-  declarations: [HomeComponent, SponsoredLeaguesComponent, ViewComponent, LeaguesListComponent, TopLeaguesComponent],
-  imports: [
-    CommonModule,
-    LeaguesRoutingModule
-  ]
+  declarations: [HomeComponent, SponsoredLeaguesComponent, ViewComponent, LeaguesListComponent, TopLeaguesComponent, NewLeagueButtonComponent],
+    imports: [
+        CommonModule,
+        LeaguesRoutingModule,
+        FontAwesomeModule
+    ]
 })
 export class LeaguesModule { }

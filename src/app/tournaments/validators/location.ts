@@ -1,12 +1,12 @@
 import {AbstractControl, ValidationErrors} from "@angular/forms";
 import {Constants} from "../constants";
 
-export class Rel {
+export class Location {
   static isValid(c: AbstractControl): ValidationErrors | null {
-    if (Constants.REL_LEVELS.includes(c.value)) {
+    if (Constants.VALID_LOCATIONS.includes(c.value)) {
       return null;
     }
 
-    return { badRel: true }
+    return { badLocation: true }
   }
 }

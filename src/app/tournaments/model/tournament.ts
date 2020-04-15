@@ -1,16 +1,20 @@
 import {League} from "../../leagues/model/league";
-import {Constants} from "../../constants";
+import {Constants} from "../constants";
+import {Constants as AppConstants} from "../../constants";
 import {sprintf} from 'sprintf-js';
 
 export class Tournament {
   private readonly _name: string;
   private readonly _format: string;
   private readonly _rel: string;
+  private readonly _bracketType: string;
   private readonly _startDate: Date;
+  private readonly _maxPlayerCount: number;
   private readonly _description: string = '';
   private readonly _private: boolean = false;
   private readonly _online: boolean = false;
   private readonly _location: string = null;
+  private readonly _locationDetails: string = null;
   private readonly _league: League = null;
   private readonly _createdBy: string = null;
   private readonly _updatedBy: string = null;
@@ -23,11 +27,14 @@ export class Tournament {
     name: string,
     format: string,
     rel: string,
+    bracketType: string,
     startDate: Date,
+    maxPlayerCount: number,
     description?: string,
     isPrivate?: boolean,
     online?: boolean,
     location?: string,
+    locationDetails?: string,
     league?: League,
     createdBy?: string,
     updatedBy?: string,
@@ -40,7 +47,13 @@ export class Tournament {
       );
     }
 
-    if (!Constants.MTG_FORMATS.includes(format.toLowerCase())) {
+    if (!Constants.BRACKET_TYPES.includes(bracketType.toLowerCase())) {
+      throw new Error(
+        sprintf('Invalid bracket type selected. "%s" is not a supported type.', bracketType)
+      );
+    }
+
+    if (!AppConstants.MTG_FORMATS.includes(format.toLowerCase())) {
       throw new Error(
         sprintf('Invalid format. "%s" is not a valid MTG format.', format)
       );
@@ -49,11 +62,14 @@ export class Tournament {
     this._name = name;
     this._format = format.toLowerCase();
     this._rel = rel.toLowerCase();
+    this._bracketType = bracketType;
     this._startDate = startDate;
+    this._maxPlayerCount = maxPlayerCount;
     this._description = description;
     this._private = isPrivate;
     this._online = online;
     this._location = location;
+    this._locationDetails = locationDetails;
     this._league = league;
     this._createdBy = createdBy;
     this._updatedBy = updatedBy;
@@ -62,6 +78,10 @@ export class Tournament {
   }
 
   public addPlayer(player: string) {
+    if (this._players.length == this.maxPlayerCount) {
+      throw new Error('Max player count reached!')
+    }
+
     this._players.push(player);
     this.updateRoundCount();
   }
@@ -105,8 +125,16 @@ export class Tournament {
     return this._rel;
   }
 
+  get bracketType(): string {
+    return this._bracketType;
+  }
+
   get startDate(): Date {
     return this._startDate;
+  }
+
+  get maxPlayerCount(): number {
+    return this._maxPlayerCount;
   }
 
   get description(): string {
@@ -123,6 +151,10 @@ export class Tournament {
 
   get location(): string {
     return this._location;
+  }
+
+  get locationDetails(): string {
+    return this._locationDetails;
   }
 
   get league(): League | null {
