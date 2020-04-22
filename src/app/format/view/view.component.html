@@ -37,7 +37,7 @@
                       </ul>
                     </div>
                     <div class="card-body" *ngIf="getMode() === 'feed'">
-                      <app-format-feed-list></app-format-feed-list>
+                      <app-format-feed-list [format]="format"></app-format-feed-list>
                     </div>
                     <div class="card-body" *ngIf="getMode() === 'upcoming'">
                       <app-upcoming-tournaments-list [format]="format"></app-upcoming-tournaments-list>

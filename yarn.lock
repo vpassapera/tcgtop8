@@ -1254,6 +1254,10 @@
   resolved "https://registry.yarnpkg.com/@yarnpkg/lockfile/-/lockfile-1.1.0.tgz#e77a97fbd345b76d83245edcd17d393b1b41fb31"
   integrity sha512-GpSwvyXOcOOlV70vbnzjj4fW5xW/FdUF6nQEt1ENy7m4ZCczi1+/buVUPAqmGfqznsORNFzUMjctTIp8a9tuCQ==
 
+"FosJsRoutingBundle@https://github.com/FriendsOfSymfony/FOSJsRoutingBundle/archive/2.5.4.tar.gz":
+  version "0.0.0"
+  resolved "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle/archive/2.5.4.tar.gz#8d9f47781c6b04b758f018c52877908976ebfc8b"
+
 JSONStream@^1.3.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-1.3.5.tgz#3208c1f08d3a4d99261ab64f92302bc15e111ca0"
@@ -2724,6 +2728,11 @@ destroy@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
   integrity sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
+
+detect-browser@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/detect-browser/-/detect-browser-5.0.0.tgz#a43085fe7b5f0f4200e7e83f003ad9874b4a45f8"
+  integrity sha512-jUaq/SAT9YMlmhq/8w7gnqqr8AMcc7iYG1eAp7vP/7xn2eLtlcnEmxOkh2PmTg2Q+jVSUO3XD4sZ/IldbGg3dA==
 
 detect-node@^2.0.4:
   version "2.0.4"
@@ -7209,6 +7218,11 @@ symbol-observable@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
   integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
+
+symfony-ts-router@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/symfony-ts-router/-/symfony-ts-router-1.0.6.tgz#eb24016145da3c53dd8f65d8e58d38d74edc9918"
+  integrity sha512-IxoNSkmHYUrDaovDgtqXjrCodqGQEMqbLiZq1wEvwfb4SqHIMr+qKjbxJGBeToEUUy7ZlBGE+RjfV75Uttb4tQ==
 
 tapable@^1.0.0, tapable@^1.1.3:
   version "1.1.3"

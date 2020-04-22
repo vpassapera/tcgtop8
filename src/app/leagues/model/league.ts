@@ -1,3 +1,5 @@
+import * as moment from "moment";
+
 export class League {
   private readonly _name: string;
   private readonly _description: string;
@@ -5,8 +7,8 @@ export class League {
   private readonly _logoUrl: string;
   private readonly _createdBy: string = null;
   private readonly _updatedBy: string = null;
-  private readonly _createdAt: Date = null;
-  private readonly _updatedAt: Date = null;
+  private readonly _createdAt: moment.Moment = null;
+  private readonly _updatedAt: moment.Moment = null;
   private _members: string[] = [];
   private _moderators: string[] = [];
 
@@ -17,8 +19,8 @@ export class League {
     logoUrl: string,
     createdBy?: string,
     updatedBy?: string,
-    createdAt?: Date,
-    updatedAt?: Date,
+    createdAt?: moment.Moment,
+    updatedAt?: moment.Moment,
   ) {
     this._name = name;
     this._description = description;
@@ -78,11 +80,11 @@ export class League {
     return this._updatedBy;
   }
 
-  get createdAt(): Date | null {
+  get createdAt(): moment.Moment | null {
     return this._createdAt;
   }
 
-  get updatedAt(): Date | null {
+  get updatedAt(): moment.Moment | null {
     return this._updatedAt;
   }
 }

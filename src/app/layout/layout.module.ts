@@ -12,7 +12,6 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {ToasterComponent} from './toaster/toaster.component';
 import {ToasterModule} from "angular2-toaster";
 
-
 @NgModule({
   declarations: [
     FooterComponent,
@@ -22,7 +21,7 @@ import {ToasterModule} from "angular2-toaster";
     NavigationComponent,
     AnnouncementComponent,
     NotFoundComponent,
-    ToasterComponent
+    ToasterComponent,
   ],
     imports: [
         CommonModule,

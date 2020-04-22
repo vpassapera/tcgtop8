@@ -6,93 +6,10 @@
     <div class="card-body">
       <div class="row">
         <div class="col-lg-7">
-          <app-tournament-form [formatInput]="format"></app-tournament-form>
+          <app-tournament-form [requestedFormat]="format"></app-tournament-form>
         </div>
-        <div class="col-lg-5 tips-body">
-          <h3>Tips</h3>
-          <hr/>
-          <h4>Bracket Types</h4>
-          <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" data-toggle="tab" href="#single-elimination">Single Elimination</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#double-elimination">Double Elimination</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#round-robin">Round Robin</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#swiss">Swiss</a>
-            </li>
-          </ul>
-          <br/>
-          <div id="bracket-type-tips" class="tab-content">
-            <div class="tab-pane fade active show" id="single-elimination">
-              <p>A single-elimination, knockout, or sudden death tournament is a type of elimination tournament where the
-                loser of each match-up is immediately eliminated from the tournament. Each winner will play another in the
-                next round, until the final match-up, whose winner becomes the tournament champion. Each match-up may be a
-                single match or several, for example two-legged ties in European football or best-of series in American pro
-                sports. Defeated competitors may play no further part after losing, or may participate in "consolation" or
-                "classification" matches against other losers to determine the lower final rankings.
-              </p>
-              <img src="/assets/images/brackets/single-elim.jpg" class="bracket-help-img">
-            </div>
-            <div class="tab-pane fade" id="double-elimination">
-              <p>A double-elimination tournament is a type of elimination tournament competition in which a participant
-                ceases to be eligible to win the tournament's championship upon having lost two games or matches. It stands
-                in contrast to a single-elimination tournament, in which only one defeat results in elimination.
-              </p>
-              <img src="/assets/images/brackets/double-elim.png" class="bracket-help-img">
-            </div>
-            <div class="tab-pane fade" id="round-robin">
-              <p>A round-robin tournament (or all-play-all tournament) is a competition in which each contestant meets all
-                other contestants in turn. A round-robin contrasts with an elimination tournament, in which participants are
-                eliminated after a certain number of losses.
-                <br/><br/>
-                In a single round-robin schedule, each participant plays every other participant once. Round-robins can suffer
-                from being too long compared to other tournament types, and with later scheduled games potentially not having
-                any substantial meaning. They may also require tie-breaking procedures.
-              </p>
-              <img src="/assets/images/brackets/round-robin.png" class="bracket-help-img">
-            </div>
-            <div class="tab-pane fade" id="swiss">
-              <p>A Swiss-system tournament is a non-eliminating tournament format that features a set number of rounds of
-                competition, but considerably fewer than that of a round-robin tournament. In a Swiss tournament, each
-                competitor (team or individual) does not necessarily play all other entrants. Competitors meet one-on-one
-                in each round and are paired using a set of rules designed to ensure that each competitor plays opponents
-                with a similar running score, but not the same opponent more than once. The winner is the competitor
-                with the highest aggregate points earned in all rounds. All competitors play in each round unless there
-                is an odd number of players.
-              </p>
-              <img src="/assets/images/brackets/swiss.png" class="bracket-help-img">
-            </div>
-          </div>
-          <hr/>
-          <h4>Rule Enforcement Levels (REL)</h4>
-          <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" data-toggle="tab" href="#regular">Regular</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#competitive">Competitive</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#professional">Professional</a>
-            </li>
-          </ul>
-          <br/>
-          <div id="reltips" class="tab-content">
-            <div class="tab-pane fade active show" id="regular">
-              <p>Regular</p>
-            </div>
-            <div class="tab-pane fade" id="competitive">
-              <p>Competitive</p>
-            </div>
-            <div class="tab-pane fade" id="professional">
-              <p>Professional</p>
-            </div>
-          </div>
+        <div class="col-lg-5">
+          <app-tournament-form-helper></app-tournament-form-helper>
         </div>
       </div>
     </div>

@@ -10,132 +10,26 @@
       <a class="dropdown-item" href="#">Separated link</a>
     </div>
   </div>
-  <div class="card-body">
-    <h4 class="card-title meta-archetype-title">Aggro</h4>
+  <div class="card-body" *ngFor="let item of listItems">
+    <h4 class="card-title meta-archetype-title">{{item.name}}</h4>
     <ul class="list-group">
-      <li class="list-group-item d-flex justify-content-between align-items-center">
+      <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let deck of item.decks">
         <div class="d-flex justify-content-start small">
-          Deck 1
+          {{deck.name}}
         </div>
         <div class="d-flex justify-content-end">
-          <span class="badge badge-primary max-width-2">50</span>
+          <span class="badge badge-primary max-width-2">{{deck.count}}</span>
           &nbsp;
-          <span class="badge badge-success badge-pill max-width-4">
-            14%
-            <fa-icon [icon]="metaIncrease"></fa-icon>
-          </span>
-        </div>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <div class="d-flex justify-content-start small">
-          Deck 2
-        </div>
-        <div class="d-flex justify-content-end">
-          <span class="badge badge-primary max-width-2">25</span>
-          &nbsp;
-          <span class="badge badge-primary badge-pill max-width-4">
-            10%
+          <span class="badge badge-primary badge-pill max-width-4" *ngIf="deck.trend == 'neutral'">
+            {{deck.percent}}
             <fa-icon [icon]="metaSame"></fa-icon>
           </span>
-        </div>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <div class="d-flex justify-content-start small">
-          Deck 3
-        </div>
-        <div class="d-flex justify-content-end">
-          <span class="badge badge-primary max-width-2">10</span>
-          &nbsp;
-          <span class="badge badge-danger badge-pill max-width-4">
-            5%
-            <fa-icon [icon]="metaDecrease"></fa-icon>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="card-body">
-    <h4 class="card-title meta-archetype-title">Control</h4>
-    <ul class="list-group">
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <div class="d-flex justify-content-start small">
-          Deck 1
-        </div>
-        <div class="d-flex justify-content-end">
-          <span class="badge badge-primary max-width-2">50</span>
-          &nbsp;
-          <span class="badge badge-success badge-pill max-width-4">
-            14%
+          <span class="badge badge-success badge-pill max-width-4" *ngIf="deck.trend == 'up'">
+            {{deck.percent}}
             <fa-icon [icon]="metaIncrease"></fa-icon>
           </span>
-        </div>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <div class="d-flex justify-content-start small">
-          Deck 2
-        </div>
-        <div class="d-flex justify-content-end">
-          <span class="badge badge-primary max-width-2">25</span>
-          &nbsp;
-          <span class="badge badge-primary badge-pill max-width-4">
-            10%
-            <fa-icon [icon]="metaSame"></fa-icon>
-          </span>
-        </div>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <div class="d-flex justify-content-start small">
-          Deck 3
-        </div>
-        <div class="d-flex justify-content-end">
-          <span class="badge badge-primary max-width-2">10</span>
-          &nbsp;
-          <span class="badge badge-danger badge-pill max-width-4">
-            5%
-            <fa-icon [icon]="metaDecrease"></fa-icon>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="card-body">
-    <h4 class="card-title meta-archetype-title">Combo</h4>
-    <ul class="list-group">
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <div class="d-flex justify-content-start small">
-          Deck 1
-        </div>
-        <div class="d-flex justify-content-end">
-          <span class="badge badge-primary max-width-2">50</span>
-          &nbsp;
-          <span class="badge badge-success badge-pill max-width-4">
-            14%
-            <fa-icon [icon]="metaIncrease"></fa-icon>
-          </span>
-        </div>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <div class="d-flex justify-content-start small">
-          Deck 2
-        </div>
-        <div class="d-flex justify-content-end">
-          <span class="badge badge-primary max-width-2">25</span>
-          &nbsp;
-          <span class="badge badge-primary badge-pill max-width-4">
-            10%
-            <fa-icon [icon]="metaSame"></fa-icon>
-          </span>
-        </div>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <div class="d-flex justify-content-start small">
-          Deck 3
-        </div>
-        <div class="d-flex justify-content-end">
-          <span class="badge badge-primary max-width-2">10</span>
-          &nbsp;
-          <span class="badge badge-danger badge-pill max-width-4">
-            5%
+          <span class="badge badge-danger badge-pill max-width-4" *ngIf="deck.trend == 'down'">
+            {{deck.percent}}
             <fa-icon [icon]="metaDecrease"></fa-icon>
           </span>
         </div>

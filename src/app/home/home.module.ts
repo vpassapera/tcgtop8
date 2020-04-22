@@ -7,14 +7,16 @@ import { LayoutModule } from "../layout/layout.module";
 import { GlobalFeedComponent } from './global-feed/global-feed.component';
 import { GlobalLatestWinnersComponent } from './global-latest-winners/global-latest-winners.component';
 import { GlobalLatestTournamentsComponent } from './global-latest-tournaments/global-latest-tournaments.component';
+import {FeedModule} from "../feed/feed.module";
 
 
 @NgModule({
   declarations: [HomeComponent, GlobalFeedComponent, GlobalLatestWinnersComponent, GlobalLatestTournamentsComponent],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    LayoutModule
-  ]
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        LayoutModule,
+        FeedModule
+    ]
 })
 export class HomeModule { }

@@ -23,7 +23,7 @@
       <label for="format">Format</label>
       <select class="form-control" id="format" formControlName="format" aria-describedby="formatHelp" [ngClass]="{'is-valid': format.valid}">
         <option value="" disabled>Select a format</option>
-        <option *ngFor="let formatOption of validFormats;" [value]="formatOption" [selected]="formatInput.toLowerCase() == formatOption">{{formatOption | titlecase}}</option>
+        <option *ngFor="let formatOption of validFormats;" [value]="formatOption">{{formatOption | titlecase}}</option>
       </select>
       <small id="formatHelp" class="form-text text-muted">The format for the tournament.</small>
       <div class="valid-feedback" *ngIf="format.valid">
@@ -75,7 +75,7 @@
         <span *ngIf="rel.value == 'professional'">GP day 2, Pro Tour, World Cup. Players should be professionals, make few if any mistakes, and require little to no guidance at all.</span>
       </div>
       <div class="form-control-feedback pull-left" *ngIf="rel.errors && (rel.dirty || rel.touched)">
-        <p *ngIf="format.errors.badRel">REL is invalid.</p>
+        <p *ngIf="rel.errors.badRel">REL is invalid.</p>
       </div>
     </div>
     <div class="form-group" [ngClass]="{'has-danger': startDate.invalid && (startDate.dirty || startDate.touched), 'has-success': startDate.valid && (startDate.dirty || startDate.touched)}">
@@ -109,7 +109,7 @@
         Location is set!
       </div>
       <div class="form-control-feedback pull-left" *ngIf="location.errors && (location.dirty || location.touched)">
-        <p *ngIf="format.errors.badLocation">Location is invalid.</p>
+        <p *ngIf="location.errors.badLocation">Location is invalid.</p>
       </div>
     </div>
     <div class="form-group" [ngClass]="{'has-danger': locationDetails.invalid && (locationDetails.dirty || locationDetails.touched), 'has-success': locationDetails.valid && (locationDetails.dirty || location.touched)}" *ngIf="location.value == 'other'">

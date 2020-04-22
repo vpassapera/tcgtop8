@@ -2,13 +2,14 @@ import {League} from "../../leagues/model/league";
 import {Constants} from "../constants";
 import {Constants as AppConstants} from "../../constants";
 import {sprintf} from 'sprintf-js';
+import * as moment from "moment";
 
 export class Tournament {
   private readonly _name: string;
   private readonly _format: string;
   private readonly _rel: string;
   private readonly _bracketType: string;
-  private readonly _startDate: Date;
+  private readonly _startDate: moment.Moment;
   private readonly _maxPlayerCount: number;
   private readonly _description: string = '';
   private readonly _private: boolean = false;
@@ -18,8 +19,8 @@ export class Tournament {
   private readonly _league: League = null;
   private readonly _createdBy: string = null;
   private readonly _updatedBy: string = null;
-  private readonly _createdAt: Date = null;
-  private readonly _updatedAt: Date = null;
+  private readonly _createdAt: moment.Moment = null;
+  private readonly _updatedAt: moment.Moment = null;
   private _rounds: number = 0;
   private _players: string[] = [];
 
@@ -28,7 +29,7 @@ export class Tournament {
     format: string,
     rel: string,
     bracketType: string,
-    startDate: Date,
+    startDate: moment.Moment,
     maxPlayerCount: number,
     description?: string,
     isPrivate?: boolean,
@@ -38,8 +39,8 @@ export class Tournament {
     league?: League,
     createdBy?: string,
     updatedBy?: string,
-    createdAt?: Date,
-    updatedAt?: Date,
+    createdAt?: moment.Moment,
+    updatedAt?: moment.Moment,
   ) {
     if (!Constants.REL_LEVELS.includes(rel.toLowerCase())) {
       throw new Error(
@@ -129,7 +130,7 @@ export class Tournament {
     return this._bracketType;
   }
 
-  get startDate(): Date {
+  get startDate(): moment.Moment {
     return this._startDate;
   }
 
@@ -169,11 +170,11 @@ export class Tournament {
     return this._updatedBy;
   }
 
-  get createdAt(): Date | null {
+  get createdAt(): moment.Moment | null {
     return this._createdAt;
   }
 
-  get updatedAt(): Date | null {
+  get updatedAt(): moment.Moment | null {
     return this._updatedAt;
   }
 }

@@ -1,0 +1,62 @@
+.feed-source-icon {
+  margin-top: 2rem;
+  max-width: 6rem;
+  height: 4rem;
+}
+
+.card-wizards {
+  border-color: #5e73f5;
+}
+
+.card-wizards:hover {
+  box-shadow: 0 0 7px #5e73f5;
+}
+
+.card-channelfireball {
+  border-color: #1b7389;
+}
+
+.card-channelfireball:hover {
+  box-shadow: 0 0 7px #1b7389;
+}
+
+.card-reddit {
+  border-color: #ff3f18;
+}
+
+.card-reddit:hover {
+  box-shadow: 0 0 7px #ff3f18;
+}
+
+.card-mtggoldfish {
+  border-color: #f9a754;
+}
+
+.card-mtggoldfish:hover {
+  box-shadow: 0 0 7px #f9a754;
+}
+
+.card-mtgstocks {
+  border-color: #35ab4c;
+}
+
+.feed-source-icon-mtgstocks {
+  background-color: #565656;
+  border: 1px solid #1f1f1f;
+}
+
+.card-mtgstocks:hover {
+  box-shadow: 0 0 7px #35ab4c;
+}
+
+.feed-external-content ::ng-deep {
+  div {
+    text-align: center;
+  }
+  img {
+    max-width: 30rem !important;
+  }
+  p {
+    margin-top: 2rem;
+  }
+}

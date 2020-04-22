@@ -10,6 +10,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {LeaguesModule} from "./leagues/leagues.module";
 import {FormatModule} from "./format/format.module";
+import {FeedModule} from "./feed/feed.module";
+import {BackendRoutingService} from "./backend-routing.service";
 
 @NgModule({
   declarations: [
@@ -25,9 +27,11 @@ import {FormatModule} from "./format/format.module";
     LeaguesModule,
     FormatModule,
     AppRoutingModule,
+    FeedModule,
   ],
   providers: [
-    ToasterService
+    ToasterService,
+    BackendRoutingService,
   ],
   bootstrap: [AppComponent]
 })

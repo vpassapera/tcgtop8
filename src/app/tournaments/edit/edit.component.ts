@@ -35,11 +35,12 @@ export class EditComponent implements OnInit {
       'modern',
       'regular',
     'swiss',
-      moment().toDate(),
+      moment(),
+      8,
       'A quick test tournament',
       false,
       true,
-      'cockatrice'
+      'cockatrice',
     )
   }
 }

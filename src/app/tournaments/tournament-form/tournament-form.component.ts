@@ -17,7 +17,7 @@ import {Location} from "../validators/location";
 })
 export class TournamentFormComponent implements OnInit {
   @Input() tournament: Tournament = null;
-  @Input() formatInput?: string = null;
+  @Input() requestedFormat?: string = null;
   public tournamentForm: FormGroup;
   public name: FormControl;
   public description: FormControl;
@@ -41,6 +41,13 @@ export class TournamentFormComponent implements OnInit {
   constructor(){}
 
   ngOnInit() {
+    let formatState = (this.requestedFormat !== null) ? {
+      value: this.requestedFormat.toLowerCase(),
+      disabled: (this.requestedFormat !== null)
+    } : {
+      value: this.tournament.format.toLowerCase()
+    };
+
     this.name = new FormControl('', [
       Validators.required
     ]);
@@ -49,10 +56,7 @@ export class TournamentFormComponent implements OnInit {
 
     this.private = new FormControl('', []);
 
-    this.format = new FormControl({
-        value: this.formatInput.toLowerCase(),
-        disabled: (this.formatInput !== null)
-      }, [
+    this.format = new FormControl(formatState, [
         Validators.required,
         Format.isValid,
     ]);
@@ -108,7 +112,7 @@ export class TournamentFormComponent implements OnInit {
     });
 
     if (this.tournament !== null) {
-      this.tournamentForm.setValue({
+      this.tournamentForm.patchValue({
         name: this.tournament.name,
         description: this.tournament.description,
         private: this.tournament.isPrivate,
