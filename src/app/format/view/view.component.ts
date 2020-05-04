@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnInit} from '@angular/core';
+import {Component, OnChanges} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Constants} from "../../constants";
 import {Title} from "@angular/platform-browser";
@@ -10,7 +10,7 @@ import {sprintf} from 'sprintf-js';
   templateUrl: './view.component.html',
   styleUrls: ['./view.component.scss']
 })
-export class ViewComponent implements OnInit, OnChanges {
+export class ViewComponent implements OnChanges {
   private modes: string[] = [
     'upcoming',
     'past',
@@ -40,10 +40,6 @@ export class ViewComponent implements OnInit, OnChanges {
           }
         }
       )
-  }
-
-  ngOnInit(): void {
-    this.ngOnChanges();
   }
 
   ngOnChanges() {

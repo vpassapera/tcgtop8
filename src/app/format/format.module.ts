@@ -9,17 +9,21 @@ import {FormatFeedListComponent} from './format-feed-list/format-feed-list.compo
 import {FormatMostPlayedCardsComponent } from './format-most-played-cards/format-most-played-cards.component';
 import {FormatMetaListComponent} from './format-meta-list/format-meta-list.component';
 import {FeedModule} from "../feed/feed.module";
-
+import {NgSpinKitModule} from 'ng-spin-kit';
+import { ListComponent } from './deck/list/list.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
-  declarations: [ViewComponent, FormatFeedListComponent, FormatMostPlayedCardsComponent, FormatMetaListComponent],
-    imports: [
-        CommonModule,
-        FormatRoutingModule,
-        TournamentsModule,
-        ToasterModule,
-        FontAwesomeModule,
-        FeedModule
-    ]
+  declarations: [ViewComponent, FormatFeedListComponent, FormatMostPlayedCardsComponent, FormatMetaListComponent, ListComponent],
+  imports: [
+    CommonModule,
+    FormatRoutingModule,
+    TournamentsModule,
+    ToasterModule,
+    FontAwesomeModule,
+    FeedModule,
+    NgSpinKitModule,
+    ReactiveFormsModule,
+  ]
 })
 export class FormatModule { }

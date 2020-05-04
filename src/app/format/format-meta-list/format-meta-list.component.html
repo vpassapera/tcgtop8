@@ -1,14 +1,13 @@
 <div class="card border-secondary">
   <div class="card-header d-flex justify-content-between">
     <span class="float-left card-heading">Meta Game</span>
-    <button class="dropdown-toggle btn-sm btn-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Last 60 Days</button>
-    <div class="dropdown-menu dropdown-menu-right">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Separated link</a>
-    </div>
+    <form [formGroup]="timeFilter">
+      <label for="selectedTime" class="no-display"></label>
+      <select class="form-control" id="selectedTime" formControlName="selectedTime" [value]="selectedTimeState" (change)="onDateChange(selectedTime.value)">
+        <option value="" disabled>Select a time period</option>
+        <option *ngFor="let v of objectKeys(allowedTimePeriods);" [value]="v">{{v | titlecase}}</option>
+      </select>
+    </form>
   </div>
   <div class="card-body" *ngFor="let item of listItems">
     <h4 class="card-title meta-archetype-title">{{item.name}}</h4>

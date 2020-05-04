@@ -6,8 +6,8 @@ import {MetaDeckPrice} from "../model/meta-deck-price";
 import * as moment from "moment";
 import {MetaDeckCategory} from "../model/meta-deck-category";
 import {Observable} from "rxjs";
-
-const localUrl = 'assets/data/metagame.json';
+import {MetaCard} from "../model/meta-card";
+import {MetaCardList} from "../model/meta-card-list";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,18 @@ export class MetaGameService {
   // constructor(private http: HttpClient, private backendRouting: BackendRoutingService) {}
   constructor(private http: HttpClient) {}
 
-  getNewMetaDeck(data: any): MetaDeck {
+  private getNewMetaCard(data: any): MetaCard {
+    return new MetaCard(
+      data.rank,
+      data.name,
+      data.imageUrl,
+      data.multiverseid,
+      data.percentage,
+      data.hasOwnProperty('entry') ? data.entry : null
+    );
+  }
+
+  private getNewMetaDeck(data: any): MetaDeck {
     const deckPrices = <MetaDeckPrice[]>[];
     for (const entry of data.averagePrices) {
       deckPrices.push(
@@ -43,8 +54,8 @@ export class MetaGameService {
     );
   }
 
-  getFormatMetaDecks(format: string): Observable<MetaDeckCategory[]> {
-    return this.http.get(localUrl).pipe(
+  getFormatMetaDecks(format: string, startDate?: Date): Observable<MetaDeckCategory[]> {
+    return this.http.get('assets/data/metagame.json').pipe(
       map((response: any) => {
         const metaDecks = <MetaDeckCategory[]>[];
         for (const category in response.metaDecks) {
@@ -58,6 +69,19 @@ export class MetaGameService {
         }
 
         return metaDecks;
+      })
+    );
+  }
+
+  getFormatMostPlayedCards(format: string): Observable<MetaCardList> {
+    return this.http.get('assets/data/top-cards.json').pipe(
+      map((response: any) => {
+        const metaCards = <MetaCard[]>[];
+        for (const card of response.cards) {
+          metaCards.push(this.getNewMetaCard(card));
+        }
+
+        return new MetaCardList(metaCards);
       })
     );
   }
