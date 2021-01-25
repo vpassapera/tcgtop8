@@ -1,0 +1,38 @@
+<div class="card border-secondary">
+  <div class="card-header d-flex justify-content-between">
+    <span class="float-left card-heading">Meta Game</span>
+    <form [formGroup]="timeFilter">
+      <label for="selectedTime" class="no-display"></label>
+      <select class="form-control" id="selectedTime" formControlName="selectedTime" [value]="selectedTimeState" (change)="onDateChange(selectedTime.value)">
+        <option value="" disabled>Select a time period</option>
+        <option *ngFor="let v of objectKeys(allowedTimePeriods);" [value]="v">{{v | titlecase}}</option>
+      </select>
+    </form>
+  </div>
+  <div class="card-body" *ngFor="let item of listItems">
+    <h4 class="card-title meta-archetype-title">{{item.name}}</h4>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let deck of item.decks">
+        <div class="d-flex justify-content-start small">
+          {{deck.name}}
+        </div>
+        <div class="d-flex justify-content-end">
+          <span class="badge badge-primary max-width-2">{{deck.count}}</span>
+          &nbsp;
+          <span class="badge badge-primary badge-pill max-width-4" *ngIf="deck.trend == 'neutral'">
+            {{deck.percent}}
+            <fa-icon [icon]="metaSame"></fa-icon>
+          </span>
+          <span class="badge badge-success badge-pill max-width-4" *ngIf="deck.trend == 'up'">
+            {{deck.percent}}
+            <fa-icon [icon]="metaIncrease"></fa-icon>
+          </span>
+          <span class="badge badge-danger badge-pill max-width-4" *ngIf="deck.trend == 'down'">
+            {{deck.percent}}
+            <fa-icon [icon]="metaDecrease"></fa-icon>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

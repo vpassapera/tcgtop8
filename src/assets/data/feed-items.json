@@ -1,0 +1,54 @@
+{
+  "feedItems": [
+    {
+      "sourceType": "mtggoldfish",
+      "title": "Fish Five-0: Is It Even Grixis?",
+      "link": "https://www.mtggoldfish.com/articles/fish-five-0-is-it-even-grixis",
+      "description": "Gyruda, Doom of Depths really enforces the \"Don't get mad, get even\" saying.",
+      "hasHtml": false,
+      "createdBy": "TheAsianAvenger",
+      "createdAt": "2020-04-19 16:53:02",
+      "updatedAt": "2020-04-19 16:53:02"
+    },
+    {
+      "sourceType": "channelfireball",
+      "title": "We Recant Our Previous Ikoria Digital Statement",
+      "link": "https://www.channelfireball.com/all-strategy/articles/podcast/we-recant-our-previous-ikoria-digital-statement/",
+      "description": "<p>This week, Gaby and Mashi revisit their assumptions about Ikoria, and surprisingly come to the conclusion that it may actually be a better experience in paper than digital.</p>\n<p>The post <a rel=\"nofollow\" href=\"https://www.channelfireball.com/all-strategy/articles/podcast/we-recant-our-previous-ikoria-digital-statement/\">We Recant Our Previous Ikoria Digital Statement</a> appeared first on <a rel=\"nofollow\" href=\"https://www.channelfireball.com/all-strategy\">ChannelFireball - Magic: The Gathering Strategy, Singles, Cards, Decks</a>.</p>",
+      "hasHtml": true,
+      "createdBy": "Magic FM",
+      "createdAt": "2020-04-19 16:53:02",
+      "updatedAt": "2020-04-19 16:53:02"
+    },
+    {
+      "sourceType": "wizards",
+      "title": "FNM at Home, With Your Local Store, And on MTG Arena",
+      "link": "http://magic.wizards.com/en/articles/archive/news/FNM_at_Home",
+      "description": "<div style=\"text-align: center; margin-bottom: 10px;\"><img src=\"https://media.magic.wizards.com/images/hero/9aj6asvn8h_icon.jpg\" style=\"border: 2px solid white; background: none; -webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px; padding: 0px 0px 0px 0px;\"/></div><p>Announcing Friday Night <em>Magic </em>at Home, featuring events and rewards that connect players with the MTG community during this difficult time.</p>",
+      "hasHtml": true,
+      "createdBy": "Wizards of the Coast",
+      "createdAt": "2020-04-17 16:53:02",
+      "updatedAt": "2020-04-17 16:53:02"
+    },
+    {
+      "sourceType": "mtgstocks",
+      "title": "Weekly Winners 2020 - 16",
+      "link": "https://www.mtgstocks.com/news/352?utm_source=feed",
+      "description": "This week we see less influence from Ikoria spoilers and more from brewing and EDH. Also, the effects of the pandemic seem on the magic market don't seem big (yet).\n\nLike every week, just in time for (digital) FNM, I'll now tell you about the cards that will be the talk of the (digital) town tonight!\n\n",
+      "hasHtml": false,
+      "createdBy": "Peter",
+      "createdAt": "2020-04-17 16:53:02",
+      "updatedAt": "2020-04-17 16:53:02"
+    },
+    {
+      "sourceType": "wizards",
+      "title": "Playing Magic with Friends When You Can't Gather",
+      "link": "http://magic.wizards.com/en/articles/archive/feature/playing-magic-friends-when-you-cant-gather-2020-04-17",
+      "description": "<div style=\"text-align: center; margin-bottom: 10px;\"><img src=\"https://media.magic.wizards.com/images/hero/keep-safe_icon_0.jpg\" style=\"border: 2px solid white; background: none; -webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px; padding: 0px 0px 0px 0px;\"/></div><p>Gavin talks about best <em>Magic </em>practices for keeping in touch with friends while social distancing and setting up games of <em>Magic</em> over webcam.</p>",
+      "hasHtml": true,
+      "createdBy": "Wizards of the Coast",
+      "createdAt": "2020-04-15 16:53:02",
+      "updatedAt": "2020-04-15 16:53:02"
+    }
+  ]
+}

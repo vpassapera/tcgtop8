@@ -1,0 +1,226 @@
+{
+  "cards": [
+    {
+      "rank": 2,
+      "name": "Wooded Foothills",
+      "entry": "This cards top winner is Wooded Foothills, seeing play in: blah, blah blah, blah blah blah...",
+      "manaCost": "",
+      "cmc": 0,
+      "colors": [
+      ],
+      "colorIdentity": [
+      ],
+      "type": "Land",
+      "supertypes": [],
+      "types": [
+        "Land"
+      ],
+      "set": "EXP",
+      "setName": "Zendikar Expeditions",
+      "subtypes": [],
+      "rarity": "mythic",
+      "multiverseid": 405116,
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=405116&type=card",
+      "percentage": 33
+    },
+    {
+      "rank": 1,
+      "name": "Black lotus",
+      "entry": "The weekly winner, as you can see is Black Lotus",
+      "manaCost": "0",
+      "cmc": 0,
+      "colors": [
+      ],
+      "colorIdentity": [
+      ],
+      "type": "Artifact",
+      "supertypes": [],
+      "types": [
+        "Artifacts"
+      ],
+      "set": "2ED",
+      "setName": "Unlimited Edition",
+      "subtypes": [],
+      "rarity": "Rare",
+      "multiverseid": 405116,
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=600&type=card",
+      "percentage": 33
+    },
+    {
+      "rank": 3,
+      "name": "Wooded Foothills",
+      "manaCost": "",
+      "cmc": 0,
+      "colors": [
+      ],
+      "colorIdentity": [
+      ],
+      "type": "Land",
+      "supertypes": [],
+      "types": [
+        "Land"
+      ],
+      "set": "EXP",
+      "setName": "Zendikar Expeditions",
+      "subtypes": [],
+      "rarity": "mythic",
+      "multiverseid": 405116,
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=405116&type=card",
+      "percentage": 33
+    },
+    {
+      "rank": 4,
+      "name": "Wooded Foothills",
+      "manaCost": "",
+      "cmc": 0,
+      "colors": [
+      ],
+      "colorIdentity": [
+      ],
+      "type": "Land",
+      "supertypes": [],
+      "types": [
+        "Land"
+      ],
+      "set": "EXP",
+      "setName": "Zendikar Expeditions",
+      "subtypes": [],
+      "rarity": "mythic",
+      "multiverseid": 405116,
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=405116&type=card",
+      "percentage": 33
+    },
+    {
+      "rank": 5,
+      "name": "Wooded Foothills",
+      "manaCost": "",
+      "cmc": 0,
+      "colors": [
+      ],
+      "colorIdentity": [
+      ],
+      "type": "Land",
+      "supertypes": [],
+      "types": [
+        "Land"
+      ],
+      "set": "EXP",
+      "setName": "Zendikar Expeditions",
+      "subtypes": [],
+      "rarity": "mythic",
+      "multiverseid": 405116,
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=405116&type=card",
+      "percentage": 33
+    },
+    {
+      "rank": 6,
+      "name": "Wooded Foothills",
+      "manaCost": "",
+      "cmc": 0,
+      "colors": [
+      ],
+      "colorIdentity": [
+      ],
+      "type": "Land",
+      "supertypes": [],
+      "types": [
+        "Land"
+      ],
+      "set": "EXP",
+      "setName": "Zendikar Expeditions",
+      "subtypes": [],
+      "rarity": "mythic",
+      "multiverseid": 405116,
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=405116&type=card",
+      "percentage": 33
+    },
+    {
+      "rank": 7,
+      "name": "Wooded Foothills",
+      "manaCost": "",
+      "cmc": 0,
+      "colors": [
+      ],
+      "colorIdentity": [
+      ],
+      "type": "Land",
+      "supertypes": [],
+      "types": [
+        "Land"
+      ],
+      "set": "EXP",
+      "setName": "Zendikar Expeditions",
+      "subtypes": [],
+      "rarity": "mythic",
+      "multiverseid": 405116,
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=405116&type=card",
+      "percentage": 33
+    },
+    {
+      "rank": 8,
+      "name": "Wooded Foothills",
+      "manaCost": "",
+      "cmc": 0,
+      "colors": [
+      ],
+      "colorIdentity": [
+      ],
+      "type": "Land",
+      "supertypes": [],
+      "types": [
+        "Land"
+      ],
+      "set": "EXP",
+      "setName": "Zendikar Expeditions",
+      "subtypes": [],
+      "rarity": "mythic",
+      "multiverseid": 405116,
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=405116&type=card",
+      "percentage": 33
+    },
+    {
+      "rank": 9,
+      "name": "Wooded Foothills",
+      "manaCost": "",
+      "cmc": 0,
+      "colors": [
+      ],
+      "colorIdentity": [
+      ],
+      "type": "Land",
+      "supertypes": [],
+      "types": [
+        "Land"
+      ],
+      "set": "EXP",
+      "setName": "Zendikar Expeditions",
+      "subtypes": [],
+      "rarity": "mythic",
+      "multiverseid": 405116,
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=405116&type=card",
+      "percentage": 33
+    },
+    {
+      "rank": 10,
+      "name": "Wooded Foothills",
+      "manaCost": "",
+      "cmc": 0,
+      "colors": [
+      ],
+      "colorIdentity": [
+      ],
+      "type": "Land",
+      "supertypes": [],
+      "types": [
+        "Land"
+      ],
+      "set": "EXP",
+      "setName": "Zendikar Expeditions",
+      "subtypes": [],
+      "rarity": "mythic",
+      "multiverseid": 405116,
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=405116&type=card",
+      "percentage": 33
+    }
+  ]
+}

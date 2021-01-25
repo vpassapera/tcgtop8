@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Password} from "../validators/password";
-import {ToasterConfig, ToasterService} from "angular2-toaster";
-import {Constants} from "../../constants";
+import {ToasterService} from "angular2-toaster";
 import {sprintf} from 'sprintf-js';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-registration-form',
@@ -17,15 +17,12 @@ export class RegistrationFormComponent implements OnInit {
   public password: FormControl;
   public passwordConfirmation: FormControl;
   private registering: boolean = false;
-  public toasterConfig: ToasterConfig;
 
   constructor(
-    private toasterService: ToasterService
+    private toasterService: ToasterService,
+    private titleService: Title
   ) {
-    this.toasterConfig = new ToasterConfig({
-      tapToDismiss: true,
-      timeout: Constants.TOASTER_TIMEOUT
-    });
+    this.titleService.setTitle('FreeTop8::Register')
   }
 
   ngOnInit() {

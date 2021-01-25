@@ -1,0 +1,12 @@
+@import "../../../scss/variables.scss";
+
+.featured-card {
+  text-align: center;
+  margin-top: 2rem;
+  border-bottom: $common-border;
+  img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 135px;
+  }
+}

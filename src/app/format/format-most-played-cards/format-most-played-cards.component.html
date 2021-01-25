@@ -1,0 +1,28 @@
+<ng-template #loading>
+  <div class="text-center">
+    <sk-circle></sk-circle>
+  </div>
+</ng-template>
+<div class="card border-secondary" *ngIf="metaCardList; else loading">
+  <div class="card-header">Most played cards</div>
+  <div class="featured-card">
+    <img src="{{metaCardList.topCard.imageUrl}}">
+    <div class="card-body">
+      <h6>Weekly Winner: {{metaCardList.topCard.name}}</h6>
+      <p class="card-text">
+        Current Deck Percentage: {{metaCardList.topCard.percentInDecks}}%
+        {{metaCardList.topCard.entry}}
+      </p>
+    </div>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item small d-flex justify-content-between">
+      <span>Card Name</span>
+      <span>Deck %</span>
+    </li>
+    <li class="list-group-item small list-group-item-action d-flex justify-content-between" *ngFor="let card of metaCardList.nonWinnerList">
+      <a href="{{card.getOracleLink}}" target="_blank">{{card.name}}</a>
+      <span class="text-muted">{{card.percentInDecks}}%</span>
+    </li>
+  </ul>
+</div>

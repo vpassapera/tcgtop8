@@ -1,0 +1,17 @@
+<div class="container-fluid mt-3">
+  <div class="card">
+    <div class="card-header card">
+      <h2 class="mt-2">New {{format}} Tournament</h2>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-7">
+          <app-tournament-form [requestedFormat]="format"></app-tournament-form>
+        </div>
+        <div class="col-lg-5">
+          <app-tournament-form-helper></app-tournament-form-helper>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

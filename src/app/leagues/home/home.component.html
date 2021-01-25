@@ -1,2 +1,22 @@
-<app-sponsored-leagues></app-sponsored-leagues>
-<app-leagues-index></app-leagues-index>
+<div class="container-fluid mt-3">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="float-left">Leagues</h1>
+          <app-new-league-button></app-new-league-button>
+          <div class="clearfix"></div>
+          <hr/>
+          <div class="row">
+            <div class="col-lg-10">
+              <app-leagues-list></app-leagues-list>
+            </div>
+            <div class="col-lg-2">
+              <app-sponsored-leagues></app-sponsored-leagues>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
