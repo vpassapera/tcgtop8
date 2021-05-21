@@ -1,3 +1,4 @@
+/* tslint:disable */
 ///<reference path="../../node_modules/FOSJsRoutingBundle/Resources/ts/router.d.ts" />
 import {Injectable} from '@angular/core';
 declare var Routing: FOS.Router;

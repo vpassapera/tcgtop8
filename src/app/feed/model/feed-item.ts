@@ -1,7 +1,7 @@
-import * as moment from "moment";
+import * as moment from 'moment';
 import {sprintf} from 'sprintf-js';
-import {Constants} from "../constants";
-import {Constants as AppConstants} from "../../constants";
+import {Constants} from '../constants';
+import {Constants as AppConstants} from '../../constants';
 
 export class FeedItem {
   private readonly _sourceType: string;
@@ -85,23 +85,23 @@ export class FeedItem {
   }
 
   get permalinkLabel(): string {
-    if (this.sourceType.toLowerCase() == 'mtgstocks') {
+    if (this.sourceType.toLowerCase() === 'mtgstocks') {
       return 'MTG Stocks';
     }
 
-    if (this.sourceType.toLowerCase() == 'wizards') {
+    if (this.sourceType.toLowerCase() === 'wizards') {
       return 'Wizard News';
     }
 
-    if (this.sourceType.toLowerCase() == 'channelfireball') {
+    if (this.sourceType.toLowerCase() === 'channelfireball') {
       return 'ChannelFireball';
     }
 
-    if (this.sourceType.toLowerCase() == 'mtggoldfish') {
+    if (this.sourceType.toLowerCase() === 'mtggoldfish') {
       return 'MTG Goldfish';
     }
 
-    if (this.sourceType == 'reddit') {
+    if (this.sourceType === 'reddit') {
       return 'Reddit';
     }
   }

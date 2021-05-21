@@ -16,7 +16,7 @@ switch (browser && browser.name) {
   case 'edge':
   case 'safari':
     if (browser.name === 'edge') {
-      alert('FreeTop8 might or might not work as expected on edge. For full support please use Firefox or chrome.');
+      alert('TCGTop8 might or might not work as expected on edge. For full support please use Firefox or chrome.');
     }
 
     // const scriptService = new ScriptService();

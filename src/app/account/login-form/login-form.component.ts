@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ActivatedRoute, Router} from "@angular/router";
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ToasterService} from 'angular2-toaster';
-import {faLock, faUser} from "@fortawesome/free-solid-svg-icons";
+import {faLock, faUser} from '@fortawesome/free-solid-svg-icons';
 import {sprintf} from 'sprintf-js';
-import {IconDefinition} from "@fortawesome/fontawesome-common-types";
-import {Title} from "@angular/platform-browser";
+import {IconDefinition} from '@fortawesome/fontawesome-common-types';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-form',
@@ -28,8 +28,8 @@ export class LoginFormComponent implements OnInit {
     private toasterService: ToasterService,
     private titleService: Title
   ) {
-    this.titleService.setTitle('FreeTop8::Login');
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    this.titleService.setTitle('TCGTop8::Login');
+    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
   }
 
   isAuthenticating(): boolean {
@@ -57,12 +57,15 @@ export class LoginFormComponent implements OnInit {
   submit() {
     if (this.loginForm.valid) {
       this.authenticating = true;
-      this.toasterService.pop(
+      this.authenticating = false;
+      this.toasterService.popAsync(
         'success',
         'Authentication successful!',
         sprintf('Welcome aboard %s!', this.username.value)
       );
-      this.authenticating = false;
+      this.router.navigate([this.returnUrl]).then(
+        r => null
+      );
     }
   }
 }

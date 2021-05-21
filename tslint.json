@@ -1,5 +1,10 @@
 {
   "extends": "tslint:recommended",
+  "linterOptions": {
+    "exclude": [
+      "**/backend-routing.service.ts"
+    ]
+  },
   "rules": {
     "array-type": false,
     "arrow-parens": false,
@@ -54,7 +59,7 @@
     ],
     "no-empty": false,
     "no-inferrable-types": [
-      true,
+      false,
       "ignore-params"
     ],
     "no-non-null-assertion": true,
@@ -83,7 +88,12 @@
     "template-banana-in-box": true,
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
-    "use-pipe-transform-interface": true
+    "use-pipe-transform-interface": true,
+    "variable-name": {
+      "options": [
+        "allow-leading-underscore"
+      ]
+    }
   },
   "rulesDirectory": [
     "codelyzer"
