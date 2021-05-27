@@ -3,7 +3,6 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
 import {AppModule} from './app/app.module';
 import {environment} from './environments/environment';
-import {ScriptService} from './app/layout/services/script.service';
 import {sprintf} from 'sprintf-js';
 import {detect} from 'detect-browser';
 
@@ -19,16 +18,6 @@ switch (browser && browser.name) {
       alert('TCGTop8 might or might not work as expected on edge. For full support please use Firefox or chrome.');
     }
 
-    // const scriptService = new ScriptService();
-    // scriptService.load('sfRoutes').then(function () {
-    //   if (environment.production) {
-    //     enableProdMode();
-    //   }
-    //
-    //   return platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.error(err));
-    // }).catch(function (error) {
-    //   console.log('Error loading routes: ' + error);
-    // });
     if (environment.production) {
       enableProdMode();
     }

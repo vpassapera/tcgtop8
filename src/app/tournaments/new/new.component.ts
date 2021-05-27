@@ -22,14 +22,14 @@ export class NewComponent implements OnInit {
   ) {
     route.params.subscribe(
       params => {
-        if (!Constants.MTG_FORMATS.includes(params['format'])) {
-          return this.router.navigate(['/404'])
+        if (!Constants.MTG_FORMATS.includes(params.format)) {
+          return this.router.navigate(['/404']);
         }
 
-        this.format = params['format'];
-        this.titleService.setTitle(sprintf('FreeTop8::New %s tournament', this.format))
+        this.format = params.format;
+        this.titleService.setTitle(sprintf('TCGTop8::New %s tournament', this.format));
       }
-    )
+    );
   }
 
   ngOnInit() {

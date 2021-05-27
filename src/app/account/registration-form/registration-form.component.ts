@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {Password} from "../validators/password";
-import {ToasterService} from "angular2-toaster";
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Password} from '../validators/password';
+import {ToasterService} from 'angular2-toaster';
 import {sprintf} from 'sprintf-js';
-import {Title} from "@angular/platform-browser";
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-registration-form',
@@ -22,7 +22,7 @@ export class RegistrationFormComponent implements OnInit {
     private toasterService: ToasterService,
     private titleService: Title
   ) {
-    this.titleService.setTitle('FreeTop8::Register')
+    this.titleService.setTitle('TCGTop8::Register');
   }
 
   ngOnInit() {

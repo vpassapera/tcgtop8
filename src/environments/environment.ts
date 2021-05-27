@@ -4,11 +4,11 @@ export const environment = {
   production: false,
   envName: 'development',
   api: {
-    host: 'api.freetop8.local',
-    root: 'https://api.freetop8.local/app_dev.php'
+    host: 'tcgtop8-api.local',
+    root: 'https://tcgtop8-api.local/'
   },
   appInfo: {
-    appName: 'FreeTop8',
+    appName: 'TCGTop8',
     version: 'SNAPSHOT',
     sourceRef: 'DEVELOPMENT_SNAPSHOT',
     buildDateTime: moment().toISOString()

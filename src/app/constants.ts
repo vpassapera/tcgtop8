@@ -5,7 +5,10 @@ export class Constants {
     'modern',
     'pioneer',
     'standard',
-    'commander'
+    'commander',
+    'pauper',
+    'historic',
+    'arena'
   ];
 
 }

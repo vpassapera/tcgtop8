@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ScriptService } from './script.service';
+import { InfoService } from './info.service';
 
-describe('ScriptService', () => {
+describe('InfoService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ScriptService = TestBed.get(ScriptService);
+    const service: InfoService = TestBed.get(InfoService);
     expect(service).toBeTruthy();
   });
 });

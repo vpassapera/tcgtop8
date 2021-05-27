@@ -4,52 +4,54 @@ import {Constants} from '../constants';
 import {Constants as AppConstants} from '../../constants';
 
 export class FeedItem {
-  private readonly _sourceType: string;
-  private readonly _isHtml: boolean;
+  private readonly htmlEnabled: boolean;
+  private readonly _type: string;
   private readonly _title: string;
   private readonly _link: string;
-  private readonly _format: string;
-  private readonly _description: string;
+  private readonly _body: string;
+  private readonly _formats: string[];
   private readonly _createdBy: string;
   private readonly _createdAt: moment.Moment = null;
   private readonly _updatedAt: moment.Moment = null;
 
   constructor(
-    sourceType: string,
+    type: string,
     title: string,
     link: string,
-    description: string,
+    body: string,
     createdBy: string,
-    isHtml: boolean,
+    htmlEnabled: boolean,
+    lastModified: moment.Moment,
     createdAt: moment.Moment,
     updatedAt: moment.Moment,
-    format?: string,
+    formats?: string[],
   ) {
-    if (!Constants.FEED_SOURCES.includes(sourceType.toLowerCase())) {
+    if (!Constants.FEED_SOURCES.includes(type.toLowerCase())) {
       throw new Error(
-        sprintf('Invalid Source %s is not supported!', sourceType)
+        sprintf('Invalid Source %s is not supported!', type)
       );
     }
-
-    if (format && !AppConstants.MTG_FORMATS.includes(format.toLowerCase())) {
-      throw new Error(
-        sprintf('Invalid format. "%s" is not a valid MTG format.', format)
-      );
+    for (const format of formats) {
+      if (format && !AppConstants.MTG_FORMATS.includes(format.toLowerCase())) {
+        throw new Error(
+          sprintf('Invalid format. "%s" is not a valid MTG format.', format)
+        );
+      }
     }
 
-    this._sourceType = sourceType.toLowerCase();
+    this._type = type.toLowerCase();
     this._title = title;
     this._link = link;
-    this._format = format;
-    this._isHtml = isHtml;
-    this._description = description;
+    this._formats = formats;
+    this._body = body;
     this._createdBy = createdBy;
     this._createdAt = createdAt;
     this._updatedAt = updatedAt;
+    this.htmlEnabled = htmlEnabled;
   }
 
-  get sourceType(): string {
-    return this._sourceType;
+  get type(): string {
+    return this._type;
   }
 
   get title(): string {
@@ -60,16 +62,16 @@ export class FeedItem {
     return this._link;
   }
 
-  get format(): string {
-    return this._format;
+  get formats(): string[] {
+    return this._formats;
   }
 
-  get description(): string {
-    return this._description;
+  get body(): string {
+    return this._body;
   }
 
-  get isHtml(): boolean {
-    return this._isHtml;
+  get isHtmlEnabled(): boolean {
+    return this.htmlEnabled;
   }
 
   get createdBy(): string {
@@ -85,23 +87,23 @@ export class FeedItem {
   }
 
   get permalinkLabel(): string {
-    if (this.sourceType.toLowerCase() === 'mtgstocks') {
+    if (this._type.toLowerCase() === 'mtgstocks') {
       return 'MTG Stocks';
     }
 
-    if (this.sourceType.toLowerCase() === 'wizards') {
+    if (this._type.toLowerCase() === 'wizards') {
       return 'Wizard News';
     }
 
-    if (this.sourceType.toLowerCase() === 'channelfireball') {
+    if (this._type.toLowerCase() === 'channelfireball') {
       return 'ChannelFireball';
     }
 
-    if (this.sourceType.toLowerCase() === 'mtggoldfish') {
+    if (this._type.toLowerCase() === 'mtggoldfish') {
       return 'MTG Goldfish';
     }
 
-    if (this.sourceType === 'reddit') {
+    if (this._type === 'reddit') {
       return 'Reddit';
     }
   }

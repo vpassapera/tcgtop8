@@ -1,0 +1,74 @@
+<div class="container-fluid mt-3 animated fadeIn">
+  <div class="col-md-12">
+    <ng-template #loading>
+      <div class="text-center">
+        <sk-circle></sk-circle>
+      </div>
+    </ng-template>
+    <ng-container *ngIf="backend; else loading">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card border-info">
+            <h5 class="card-header text-center">{{frontend.appName}}</h5>
+            <div class="card-body">
+              <span class="info-item">Version</span>: {{frontend.version}}<br/>
+              <span class="info-item">Source</span>: {{frontend.sourceRef}}<br/>
+              <span class="info-item">Build Time</span>: {{moment.utc(frontend.buildDateTime).local().format('YYYY-MM-DD HH:mm:ss')}}<br/>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border-success">
+            <h5 class="card-header text-center">{{backend.appName}}</h5>
+            <div class="card-body">
+              <span class="info-item">Version</span>: {{backend.version}}<br/>
+              <span class="info-item">Source</span>: {{backend.sourceRef}}<br/>
+              <span class="info-item">Build Time</span>: {{moment.utc(backend.buildDateTime).local().format('YYYY-MM-DD HH:mm:ss')}}<br/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <div class="row" style="margin-top: 3rem;">
+      <div class="col-md-12">
+        <div class="card border-primary">
+          <span class="page-subtitle pull-right text-muted"></span>
+          <div class="card-body text-center credit-container">
+            <h4 class="card-title">Dev Stack</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Awesome software used to develop this app</h6>
+            <a href="https://secure.php.net/"><img src="assets/images/credits/php8.png" alt="PHP 8" /></a>
+            <a href="https://www.sonarqube.org/"><img src="assets/images/credits/sonar.png" alt="SonarQube" /></a>
+            <a href="https://symfony.com/"><img src="assets/images/credits/symfony.png" alt="Symfony" /></a>
+            <a href="https://www.postgresql.org/"><img src="assets/images/credits/postgresql.png" alt="PostgreSQL" /></a>
+            <a href="https://jquery.com/"><img src="assets/images/credits/jquery.png" alt="jQuery" /></a>
+            <a href="https://getbootstrap.com/"><img src="assets/images/credits/bootstrap-logo.png" alt="Bootstrap" /></a>
+            <a href="https://www.ansible.com/"><img src="assets/images/credits/ansible.png" alt="Ansible" /></a>
+            <a href="https://daneden.github.io/animate.css/"><img src="assets/images/credits/animatecss.png" alt="Animate CSS" /></a>
+            <a href="https://redis.io/"><img src="assets/images/credits/redis.png" alt="Redis" /></a>
+            <a href="https://fontawesome.io/"><img src="assets/images/credits/fontawesome.png" alt="Font Awesome" /></a>
+            <a href="https://www.docker.io/"><img src="assets/images/credits/docker.png" alt="Docker" /></a>
+            <a href="https://phpmd.org/"><img src="assets/images/credits/messdetector.png" alt="PHP Mess Detector" /></a>
+            <a href="https://git-scm.com/"><img src="assets/images/credits/git.png" alt="Git" /></a>
+            <a href="http://www.phpmetrics.org/"><img src="assets/images/credits/phpmetrics.png" alt="PHP Metrics" /></a>
+            <a href="https://phpunit.de/"><img src="assets/images/credits/phpunit.png" alt="PHPUnit" /></a>
+            <a href="https://jenkins.io/"><img src="assets/images/credits/jenkins.png" alt="Jenkins" /></a>
+            <a href="https://github.com/mihaeu/dephpend"><img src="assets/images/credits/dephpend.png" alt="dePHPend" /></a>
+            <a href="https://karma-runner.github.io/1.0/index.html"><img src="assets/images/credits/karma.png" alt="Karma Runner" /></a>
+            <a href="http://gulpjs.com/"><img src="assets/images/credits/gulp.png" alt="GulpJS" /></a>
+            <a href="https://pdepend.org/"><img src="assets/images/credits/pdepend.png" alt="PHP Depend" /></a>
+            <a href="http://www.php-fig.org/"><img src="assets/images/credits/phpfig.png" alt="PHP-Fig" /></a>
+            <a href="http://swagger.io/"><img src="assets/images/credits/swagger.png" alt="Swagger" /></a>
+            <a href="http://robo.li/"><img src="assets/images/credits/robo.png" alt="robo.li" /></a>
+            <a href="https://momentjs.com/"><img src="assets/images/credits/momentjs.png" alt="Moment JS" /></a>
+            <a href="https://sensiolabs.com/"><img src="assets/images/credits/sensio.png" alt="SensioLabs" /></a>
+            <a href="https://angular.io/"><img src="assets/images/credits/angular.png" alt="Angular" /></a>
+            <a href="https://www.typescriptlang.org/"><img src="assets/images/credits/typescript.png" alt="TypeScript" /></a>
+            <a href="https://nodejs.org/en/"><img src="assets/images/credits/nodejs.png" alt="NodeJS" /></a>
+            <a href="http://www.sphinx-doc.org"><img src="assets/images/credits/sphinx.png" alt="Sphinx" /></a>
+            <a href="http://lxml.de/"><img src="assets/images/credits/lxml.png" alt="lxml" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

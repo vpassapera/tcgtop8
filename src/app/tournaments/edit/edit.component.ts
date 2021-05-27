@@ -23,10 +23,10 @@ export class EditComponent implements OnInit {
   ) {
     route.params.subscribe(
       params => {
-        this.slug = params['slug'];
-        this.titleService.setTitle(sprintf('FreeTop8::Editing %s tournament', this.slug))
+        this.slug = params.slug;
+        this.titleService.setTitle(sprintf('TCGTop8::Editing %s tournament', this.slug))
       }
-    )
+    );
   }
 
   ngOnInit() {

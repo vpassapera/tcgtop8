@@ -1,8 +1,8 @@
 import {Component, OnChanges} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {Constants} from "../../constants";
-import {Title} from "@angular/platform-browser";
-import {ToasterService} from "angular2-toaster";
+import {ActivatedRoute, Router} from '@angular/router';
+import {Constants} from '../../constants';
+import {Title} from '@angular/platform-browser';
+import {ToasterService} from 'angular2-toaster';
 import {sprintf} from 'sprintf-js';
 
 @Component({
@@ -28,18 +28,18 @@ export class ViewComponent implements OnChanges {
   ) {
       route.params.subscribe(
         params => {
-          if (!Constants.MTG_FORMATS.includes(params['format'])) {
-            return this.router.navigate(['/404'])
+          if (!Constants.MTG_FORMATS.includes(params.format)) {
+            return this.router.navigate(['/404']);
           }
 
-          if (this.format !== params['format']) {
-            this.format = params['format'];
-            this.titleService.setTitle('FreeTop8::' + this.format[0].toUpperCase() + this.format.slice(1));
+          if (this.format !== params.format) {
+            this.format = params.format;
+            this.titleService.setTitle('TCGTop8::' + this.format[0].toUpperCase() + this.format.slice(1));
             // Let's refresh the component since we've changed formats.
             this.ngOnChanges();
           }
         }
-      )
+      );
   }
 
   ngOnChanges() {

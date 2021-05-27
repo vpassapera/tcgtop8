@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mtgin": {
+    "tcgtop8": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mtgin",
+            "outputPath": "dist/tcgtop8",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -76,18 +76,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mtgin:build"
+            "browserTarget": "tcgtop8:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mtgin:build:production"
+              "browserTarget": "tcgtop8:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mtgin:build"
+            "browserTarget": "tcgtop8:build"
           }
         },
         "test": {
@@ -124,15 +124,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mtgin:serve"
+            "devServerTarget": "tcgtop8:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mtgin:serve:production"
+              "devServerTarget": "tcgtop8:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "mtgin"
+  "defaultProject": "tcgtop8"
 }

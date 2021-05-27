@@ -1,37 +1,23 @@
-/* tslint:disable */
-///<reference path="../../node_modules/FOSJsRoutingBundle/Resources/ts/router.d.ts" />
-import {Injectable} from '@angular/core';
-declare var Routing: FOS.Router;
+import { Injectable } from '@angular/core';
+import {Router, RouteParams} from 'symfony-ts-router';
+import {environment} from '../environments/environment';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BackendRoutingService {
-  private routing: FOS.Router;
-  private baseUrl: string = null;
-  private routes: FOS.RoutesMap = null;
+  private readonly routing: Router;
 
-  constructor () {
-    this.routing = Routing;
+  constructor (private http: HttpClient) {
+    this.routing = new Router();
+    const routes = require('../assets/js/fos_js_routes.json');
+    this.routing.setRoutingData(routes);
+    this.routing.setScheme('https');
+    this.routing.setHost(environment.api.host);
   }
 
-  setBaseUrl(baseUrl: string): void {
-    this.baseUrl = baseUrl;
-  }
-
-  setRoutes(routes: FOS.RoutesMap): void {
-    this.routes = routes;
-  }
-
-  generate (routeName: string, options: object = {}): string {
-    if (this.baseUrl) {
-      this.routing.setBaseUrl(this.baseUrl);
-    }
-
-    if (this.routes) {
-      this.routing.setRoutes(this.routes);
-    }
-
-    return this.routing.generate(routeName, options, true);
+  generate (name: string, params: RouteParams = {}, absolute = false): string {
+    return this.routing.generate(name, params, true);
   }
 }
