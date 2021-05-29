@@ -22,7 +22,7 @@ export class FeedService {
       data.link,
       data.body,
       data.author,
-      data.hasHtml,
+      data.isHtmlEnabled,
       moment(data.lastModified),
       moment(data.createdAt),
       moment(data.updatedAt),

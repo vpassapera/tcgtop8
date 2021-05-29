@@ -1,1 +1,8 @@
-<app-feed-item *ngFor="let listItem of listItems" [feedItem]="listItem"></app-feed-item>
+<ng-template #loading>
+  <div class="text-center">
+    <sk-circle></sk-circle>
+  </div>
+</ng-template>
+<div *ngIf="listItems; else loading">
+  <app-feed-item *ngFor="let listItem of listItems" [feedItem]="listItem"></app-feed-item>
+</div>

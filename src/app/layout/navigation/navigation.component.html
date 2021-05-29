@@ -31,6 +31,17 @@
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" [routerLink]="['/formats/commander']">Commander <span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item dropdown" [routerLinkActive]="['active']">
+        <a class="nav-link dropdown-toggle" href="#" id="otherFormatDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Other
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="otherFormatDropdown">
+          <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/formats/pauper']">Pauper <span class="sr-only">(current)</span></a>
+          <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/formats/historic']">Historic <span class="sr-only">(current)</span></a>
+          <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/formats/arena']">Arena <span class="sr-only">(current)</span></a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">

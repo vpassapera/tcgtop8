@@ -11,8 +11,11 @@ describe('FeedItem', () => {
       'foo',
       false,
       moment(),
-      moment()
+      moment(),
+      moment(),
+      []
     );
+
     expect(item).toBeTruthy();
   });
 });

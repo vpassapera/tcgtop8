@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {NgSpinKitModule} from 'ng-spin-kit';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './latest/home.component';
 import { LayoutModule } from '../layout/layout.module';
@@ -13,6 +13,7 @@ import {FeedModule} from '../feed/feed.module';
 @NgModule({
   declarations: [HomeComponent, GlobalFeedComponent, GlobalLatestWinnersComponent, GlobalLatestTournamentsComponent],
     imports: [
+        NgSpinKitModule,
         CommonModule,
         HomeRoutingModule,
         LayoutModule,

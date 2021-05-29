@@ -1,6 +1,5 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, Input, OnChanges} from '@angular/core';
 import {FeedItem} from '../../feed/model/feed-item';
-import * as moment from 'moment';
 import {FeedService} from '../../feed/service/feed.service';
 
 @Component({
@@ -11,11 +10,12 @@ import {FeedService} from '../../feed/service/feed.service';
 export class FormatFeedListComponent implements OnChanges {
   @Input() format: string;
   private listItems: FeedItem[];
+  private page: number = 1;
 
   constructor(private client: FeedService) {}
 
   ngOnChanges() {
-    this.client.getFeed(null, this.format).subscribe(
+    this.client.getFeed(this.page, this.format).subscribe(
       (items) => {
         this.listItems = items;
       }

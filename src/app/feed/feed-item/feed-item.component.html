@@ -1,19 +1,19 @@
 <div class="card card-{{feedItem.type}} mb-3">
-  <div class="card-body card-body-{{feedItem.type}}">
+  <div class="card-body">
     <div class="row">
-      <a href="{{feedItem.link}}" class="stretched-link text-hide" target="_blank">{{feedItem.permalinkLabel}}</a>
       <div class="col-md-2 text-center">
         <img src="assets/images/{{feedItem.type}}_logo.png" alt="{{feedItem.type}}" class="feed-source-icon feed-source-icon-{{feedItem.type}}"/>
       </div>
       <div class="col-md-10">
         <h4 class="card-title">{{feedItem.title}}</h4>
         <h5 class="card-subtitle text-muted mb-3">by {{feedItem.createdBy}}</h5>
-        <div class="card-text feed-external-content" [innerHTML]="feedItem.body" *ngIf="feedItem.isHtmlEnabled"></div>
+        <div class="card-text feed-external-content card-text-{{feedItem.type}}" [innerHTML]="feedItem.body" *ngIf="feedItem.isHtmlEnabled"></div>
         <p class="card-text" *ngIf="!feedItem.isHtmlEnabled" [innerHTML]="feedItem.body"></p>
         <div class="card-footer card-footer-{{feedItem.type}}">
           <span class="text-muted">Published on {{feedItem.createdAt}}</span>
         </div>
       </div>
+      <a href="{{feedItem.link}}" class="stretched-link text-hide" target="_blank">{{feedItem.permalinkLabel}}</a>
     </div>
   </div>
 </div>

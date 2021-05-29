@@ -6,6 +6,13 @@
 
 .card-wizards {
   border-color: #5e73f5;
+  ::ng-deep {
+    .card-text-wizards > div {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
 }
 
 .card-wizards:hover {
@@ -38,6 +45,12 @@
 
 .card-mtgstocks {
   border-color: #35ab4c;
+  ::ng-deep {
+    .img-fluid {
+      max-width: 10rem;
+      padding: 1rem;
+    }
+  }
 }
 
 .feed-source-icon-mtgstocks {
@@ -54,9 +67,15 @@
     text-align: center;
   }
   img {
-    max-width: 30rem !important;
+    max-width: 30rem;
   }
   p {
     margin-top: 2rem;
   }
+}
+
+.text-hide {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
 }
