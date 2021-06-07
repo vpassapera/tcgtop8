@@ -9,15 +9,27 @@ import {FeedService} from '../../feed/service/feed.service';
 })
 export class FormatFeedListComponent implements OnChanges {
   @Input() format: string;
-  private listItems: FeedItem[];
-  private page: number = 1;
+  public listItems: FeedItem[];
+  public page: number = 1;
+  public numPages: number = 1;
 
   constructor(private client: FeedService) {}
 
+  public setPage(page: number) {
+    this.page = page;
+    this.getFeedItems();
+  }
+
   ngOnChanges() {
+    this.page = 1;
+    this.getFeedItems();
+  }
+
+  private getFeedItems() {
     this.client.getFeed(this.page, this.format).subscribe(
-      (items) => {
-        this.listItems = items;
+      (itemCollection) => {
+        this.listItems = itemCollection.feedItems;
+        this.numPages = itemCollection.pageCount;
       }
     );
   }

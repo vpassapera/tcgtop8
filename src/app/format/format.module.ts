@@ -12,6 +12,7 @@ import {FeedModule} from "../feed/feed.module";
 import {NgSpinKitModule} from 'ng-spin-kit';
 import { ListComponent } from './deck/list/list.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {LayoutModule} from '../layout/layout.module';
 
 @NgModule({
   declarations: [ViewComponent, FormatFeedListComponent, FormatMostPlayedCardsComponent, FormatMetaListComponent, ListComponent],
@@ -24,6 +25,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     FeedModule,
     NgSpinKitModule,
     ReactiveFormsModule,
+    LayoutModule,
   ]
 })
 export class FormatModule { }

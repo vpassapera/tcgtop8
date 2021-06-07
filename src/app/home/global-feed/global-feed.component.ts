@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {FeedItem} from "../../feed/model/feed-item";
-import * as moment from "moment";
-import {FeedService} from "../../feed/service/feed.service";
+import {Component, OnInit} from '@angular/core';
+import {FeedItem} from '../../feed/model/feed-item';
+import {FeedService} from '../../feed/service/feed.service';
 
 @Component({
   selector: 'app-global-feed',
@@ -9,16 +8,27 @@ import {FeedService} from "../../feed/service/feed.service";
   styleUrls: ['./global-feed.component.scss']
 })
 export class GlobalFeedComponent implements OnInit {
-  private listItems: FeedItem[];
+  public listItems: FeedItem[];
+  public page: number = 1;
+  public numPages: number = 1;
 
   constructor(private client: FeedService) {}
 
-  ngOnInit() {
-    this.client.getFeed().subscribe(
-      (items) => {
-        this.listItems = items;
-      }
-    )
+  public setPage(page: number) {
+    this.page = page;
+    this.getFeedItems();
   }
 
+  ngOnInit() {
+    this.getFeedItems();
+  }
+
+  private getFeedItems(): void {
+    this.client.getFeed(this.page).subscribe(
+      (itemCollection) => {
+        this.listItems = itemCollection.feedItems;
+        this.numPages = itemCollection.pageCount;
+      }
+    );
+  }
 }

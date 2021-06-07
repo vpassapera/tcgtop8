@@ -7,6 +7,8 @@
       </div>
     </ng-template>
     <div *ngIf="listItems; else loading">
+      <app-paginator [currentPage]="page" [totalPages]="numPages" (pageChanged)="setPage($event)" [ellipsis]=true>
+      </app-paginator>
       <app-feed-item *ngFor="let listItem of listItems" [feedItem]="listItem"></app-feed-item>
     </div>
   </div>

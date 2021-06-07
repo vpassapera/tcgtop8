@@ -8,7 +8,8 @@ export class Constants {
     'commander',
     'pauper',
     'historic',
-    'arena'
+    'arena',
+    'vintage'
   ];
 
 }

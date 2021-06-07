@@ -1,9 +1,11 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpResponse} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {FeedItem} from '../model/feed-item';
 import * as moment from 'moment';
 import {BackendRoutingService} from '../../backend-routing.service';
+import {FeedItemCollection} from '../model/feed-item-collection.model';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -30,8 +32,13 @@ export class FeedService {
     );
   }
 
-  getFeed(page: number = 0, format?: string) {
-    const params = format ? {format} : {};
+  getFeed(page: number = 1, format?: string): Observable<FeedItemCollection> {
+    const params: any = {};
+    params.page = page;
+    if (format) {
+      params.format = format;
+    }
+
     const url =  this.backendRouting.generate(
       'get_feed_items',
       params
@@ -40,11 +47,12 @@ export class FeedService {
     return this.http.get(url).pipe(
       map((response: any) => {
         const feedItems = [] as FeedItem[];
+        const count: number = response.pageCount;
         for (const feedItem of response.feedItems) {
           feedItems.push(this.getNewFeedItem(feedItem));
         }
 
-        return feedItems;
+        return new FeedItemCollection(count, feedItems);
       })
     );
   }

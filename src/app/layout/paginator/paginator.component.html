@@ -1,0 +1,20 @@
+<ul class="pagination justify-content-center pagination-container fadeIn" *ngIf="totalPages > 1">
+  <li class="page-item pagination-item pagination-button pointer float-left" [ngClass]="{'disabled': currentPage <= 1}">
+    <a class="page-link" (click)="setPage(1)">&laquo;&laquo;</a>
+  </li>
+  <li class="page-item pagination-item pagination-button pointer" [ngClass]="{'disabled': currentPage <= 1}">
+    <a class="page-link" (click)="setPage(currentPage - 1)">&laquo;</a>
+  </li>
+  <li class="page-item pagination-item" *ngFor="let n of pageRange" [ngClass]="{'active': n !== '...' && n == currentPage}">
+    <a class="page-link pointer" *ngIf="n !== '...'; else notNum" (click)="setPage(n)">{{n}}</a>
+    <ng-template #notNum>
+      <span class="text-muted">{{n}}</span>
+    </ng-template>
+  </li>
+  <li class="page-item pagination-item pagination-button pointer" [ngClass]="{'disabled': currentPage === totalPages}">
+    <a class="page-link" (click)="setPage(currentPage + 1)">&raquo;</a>
+  </li>
+  <li class="page-item pagination-item pagination-button pointer" [ngClass]="{'disabled': currentPage === totalPages}">
+    <a class="page-link" (click)="setPage(totalPages)">&raquo;&raquo;</a>
+  </li>
+</ul>

@@ -12,12 +12,12 @@ import {FeedModule} from '../feed/feed.module';
 
 @NgModule({
   declarations: [HomeComponent, GlobalFeedComponent, GlobalLatestWinnersComponent, GlobalLatestTournamentsComponent],
-    imports: [
-        NgSpinKitModule,
-        CommonModule,
-        HomeRoutingModule,
-        LayoutModule,
-        FeedModule
-    ]
+  imports: [
+    NgSpinKitModule,
+    CommonModule,
+    HomeRoutingModule,
+    LayoutModule,
+    FeedModule,
+  ]
 })
 export class HomeModule { }

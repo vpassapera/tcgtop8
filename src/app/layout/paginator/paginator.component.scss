@@ -1,0 +1,18 @@
+.pagination-container {
+  width: 100%;
+}
+
+.pagination-button {
+  background-color: #343a40;
+  color: #fff;
+  .page-link {
+    background-color: #343a40;
+    color: #fff;
+  }
+}
+
+.pagination-item {
+  min-width: 3rem;
+  text-align: center;
+  line-height: 2rem;
+}
