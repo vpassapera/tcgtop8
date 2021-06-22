@@ -5,7 +5,8 @@ import {Constants as AppConstants} from '../../constants';
 
 export class FeedItem {
   private readonly htmlEnabled: boolean;
-  private readonly _type: string;
+  private readonly _game: string;
+  private readonly _channel: string;
   private readonly _title: string;
   private readonly _link: string;
   private readonly _body: string;
@@ -15,7 +16,8 @@ export class FeedItem {
   private readonly _updatedAt: moment.Moment = null;
 
   constructor(
-    type: string,
+    game: string,
+    channel: string,
     title: string,
     link: string,
     body: string,
@@ -26,9 +28,9 @@ export class FeedItem {
     updatedAt: moment.Moment,
     formats?: string[],
   ) {
-    if (!Constants.FEED_SOURCES.includes(type.toLowerCase())) {
+    if (!Constants.FEED_SOURCES.includes(channel.toLowerCase())) {
       throw new Error(
-        sprintf('Invalid Source %s is not supported!', type)
+        sprintf('Invalid Source %s is not supported!', channel)
       );
     }
     for (const format of formats) {
@@ -39,7 +41,8 @@ export class FeedItem {
       }
     }
 
-    this._type = type.toLowerCase();
+    this._game = game.toLowerCase();
+    this._channel = channel.toLowerCase();
     this._title = title;
     this._link = link;
     this._formats = formats;
@@ -50,8 +53,12 @@ export class FeedItem {
     this.htmlEnabled = htmlEnabled;
   }
 
-  get type(): string {
-    return this._type;
+  get game(): string {
+    return this._game;
+  }
+
+  get channel(): string {
+    return this._channel;
   }
 
   get title(): string {
@@ -87,23 +94,23 @@ export class FeedItem {
   }
 
   get permalinkLabel(): string {
-    if (this._type.toLowerCase() === 'mtgstocks') {
+    if (this._channel.toLowerCase() === 'mtgstocks') {
       return 'MTG Stocks';
     }
 
-    if (this._type.toLowerCase() === 'wizards') {
+    if (this._channel.toLowerCase() === 'wizards') {
       return 'Wizard News';
     }
 
-    if (this._type.toLowerCase() === 'channelfireball') {
+    if (this._channel.toLowerCase() === 'channelfireball') {
       return 'ChannelFireball';
     }
 
-    if (this._type.toLowerCase() === 'mtggoldfish') {
+    if (this._channel.toLowerCase() === 'mtggoldfish') {
       return 'MTG Goldfish';
     }
 
-    if (this._type === 'reddit') {
+    if (this._channel === 'reddit') {
       return 'Reddit';
     }
   }

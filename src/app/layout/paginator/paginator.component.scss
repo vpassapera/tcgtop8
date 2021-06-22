@@ -1,18 +1,8 @@
-.pagination-container {
-  width: 100%;
-}
-
-.pagination-button {
-  background-color: #343a40;
-  color: #fff;
-  .page-link {
-    background-color: #343a40;
-    color: #fff;
+.clean-pagination {
+  padding: 1rem;
+  button {
+    font-size: 1.5rem;
+    padding: .3rem .7rem;
+    border-width: 1px;
   }
-}
-
-.pagination-item {
-  min-width: 3rem;
-  text-align: center;
-  line-height: 2rem;
 }

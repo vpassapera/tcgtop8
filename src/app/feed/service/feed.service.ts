@@ -19,7 +19,8 @@ export class FeedService {
    */
   getNewFeedItem(data: any): FeedItem {
     return new FeedItem(
-      data.type,
+      data.game,
+      data.channel,
       data.title,
       data.link,
       data.body,

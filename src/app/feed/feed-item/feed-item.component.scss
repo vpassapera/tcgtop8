@@ -35,6 +35,18 @@
   box-shadow: 0 0 7px #ff3f18;
 }
 
+.card-text-reddit {
+  ::ng-deep {
+    h1, h2 {
+      font-size: 1.1rem;
+    }
+
+    h3, h4, h5, h6 {
+      font-size: 70%;
+    }
+  }
+}
+
 .card-mtggoldfish {
   border-color: #f9a754;
 }
@@ -64,7 +76,6 @@
 
 .feed-external-content ::ng-deep {
   div {
-    text-align: center;
   }
   img {
     max-width: 30rem;
