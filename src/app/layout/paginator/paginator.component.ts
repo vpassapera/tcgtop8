@@ -14,9 +14,17 @@ export class PaginatorComponent implements OnInit {
     // Noop
   }
 
-  setPage(page: number) {
-    this.currentPage = page;
-    this.pageChanged.emit(this.currentPage);
+  setPage(page: number, event: Event) {
+    const $el = event.currentTarget;
+    if ($el instanceof HTMLButtonElement) {
+      const disabled = $el.getAttribute('disabled');
+      if (disabled === 'disabled') {
+        return;
+      }
+
+      this.currentPage = page;
+      this.pageChanged.emit(this.currentPage);
+    }
   }
 
   ngOnInit() {

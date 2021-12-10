@@ -5065,6 +5065,11 @@ moment-timezone@^0.5.28:
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
   integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
 
+mousetrap@^1.6.5:
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/mousetrap/-/mousetrap-1.6.5.tgz#8a766d8c272b08393d5f56074e0b5ec183485bf9"
+  integrity sha512-QNo4kEepaIBwiT8CDhP98umTetp+JNfQYBWvC1pc6/OAibuXtRcxZ58Qz8skvEHYvURne/7R8T5VoOI7rDsEUA==
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -5146,6 +5151,13 @@ ng-spin-kit@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/ng-spin-kit/-/ng-spin-kit-5.1.1.tgz#ecad9709c77ff4dde79eb532ba0db4650a8800a8"
   integrity sha1-7K2XCcd/9N3nnrUyug20ZQqIAKg=
+
+ngx-mousetrap@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-mousetrap/-/ngx-mousetrap-11.0.0.tgz#26c1690f85744c85fe3372d4f6c89cdaac7d8cff"
+  integrity sha512-IHvSuSS83p3MwcJl189NtG/k//80Rhj/Ydxw6B3Pi0azSpBbpG9SjhFh15lLq0bG0gbxAl3wizJ2oQDcZi2/5A==
+  dependencies:
+    tslib "^2.0.0"
 
 nice-try@^1.0.4:
   version "1.0.5"
@@ -7396,6 +7408,11 @@ tslib@^1.10.0, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
   integrity sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+
+tslib@^2.0.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
+  integrity sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==
 
 tslint@~5.15.0:
   version "5.15.0"

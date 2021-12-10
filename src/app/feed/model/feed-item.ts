@@ -12,6 +12,7 @@ export class FeedItem {
   private readonly _body: string;
   private readonly _formats: string[];
   private readonly _createdBy: string;
+  private readonly _lastModified: moment.Moment = null;
   private readonly _createdAt: moment.Moment = null;
   private readonly _updatedAt: moment.Moment = null;
 
@@ -47,6 +48,7 @@ export class FeedItem {
     this._link = link;
     this._formats = formats;
     this._body = body;
+    this._lastModified = lastModified;
     this._createdBy = createdBy;
     this._createdAt = createdAt;
     this._updatedAt = updatedAt;
@@ -83,6 +85,10 @@ export class FeedItem {
 
   get createdBy(): string {
     return this._createdBy;
+  }
+
+  get lastModified(): moment.Moment {
+    return this._lastModified;
   }
 
   get createdAt(): moment.Moment {

@@ -10,7 +10,7 @@
         <div class="card-text feed-external-content card-text-{{feedItem.channel}}" [innerHTML]="feedItem.body" *ngIf="feedItem.isHtmlEnabled"></div>
         <p class="card-text" *ngIf="!feedItem.isHtmlEnabled" [innerHTML]="feedItem.body | slice:0:200"></p>
         <div class="card-footer card-footer-{{feedItem.channel}}">
-          <span class="text-muted">Published on {{feedItem.createdAt}}</span>
+          <span class="text-muted">Last modified on {{feedItem.lastModified}}</span>
         </div>
       </div>
       <a href="{{feedItem.link}}" class="stretched-link text-hide" target="_blank">{{feedItem.permalinkLabel}}</a>

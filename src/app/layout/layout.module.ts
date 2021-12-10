@@ -11,6 +11,7 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {ToasterComponent} from './toaster/toaster.component';
 import {ToasterModule} from 'angular2-toaster';
 import { PaginatorComponent } from './paginator/paginator.component';
+import {NgxMousetrapModule} from 'ngx-mousetrap';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,10 @@ import { PaginatorComponent } from './paginator/paginator.component';
     PaginatorComponent
   ],
   imports: [
-    CommonModule,
-    RouterModule.forChild([]),
-    ToasterModule,
+      CommonModule,
+      RouterModule.forChild([]),
+      ToasterModule,
+      NgxMousetrapModule,
   ]
 })
 export class LayoutModule { }

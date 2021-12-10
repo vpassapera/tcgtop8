@@ -7,4 +7,6 @@
   <app-paginator [currentPage]="page" [totalPages]="numPages" (pageChanged)="setPage($event)">
   </app-paginator>
   <app-feed-item *ngFor="let listItem of listItems" [feedItem]="listItem"></app-feed-item>
+  <app-paginator [currentPage]="page" [totalPages]="numPages" (pageChanged)="setPage($event)">
+  </app-paginator>
 </div>
