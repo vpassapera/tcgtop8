@@ -57,7 +57,7 @@ export class MetaGameService {
   getFormatMetaDecks(format: string, startDate?: Date): Observable<MetaDeckCategory[]> {
     return this.http.get('assets/data/metagame.json').pipe(
       map((response: any) => {
-        const metaDecks = <MetaDeckCategory[]>[];
+        const metaDecks = [] as MetaDeckCategory[];
         for (const category in response.metaDecks) {
           if (response.metaDecks.hasOwnProperty(category)) {
             const list = <MetaDeck[]>[];
